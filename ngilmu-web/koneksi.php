@@ -2,7 +2,7 @@
     $server = "localhost";
     $username = "root";
     $password = "";
-    $db = "ngilmu";
+    $db = "db_ngilmu";
     $koneksi = mysqli_connect($server, $username, $password, $db);
     // urutan pemanggilan variabel sama
 

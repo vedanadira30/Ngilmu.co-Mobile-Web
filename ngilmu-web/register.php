@@ -1,31 +1,15 @@
 <?php
+
 require('koneksi.php');
 
-session_start();
+if ( isset($_POST['register']) ){
+    $userMail = $_POST['txt_email'];
+    $userPass = $_POST['txt_pass'];
+    $userName = $_POST['txt_namalengkap'];
 
-if(isset($_POST['submit'])){
-    $email = $_POST['txt_email'];
-    $pass = $_POST['txt_pass'];
-
-    if(!empty(trim($email)) && !empty(trim($pass))){
-        $query = "SELECT * FROM user_admin WHERE email = '$email'";
-        $result = mysqli_query($koneksi, $query);
-        $num = mysqli_num_rows($result);
-
-        while($row = mysqli_fetch_array($result)){
-            $userVal = $row['email'];
-            $passVal = $row['password'];
-        }
-
-        if($num != 0) {
-            if($userVal==$email && $passVal==$pass){
-                header('Location: dashboard.html?email=' . urlencode($userVal));
-            }else{
-                $error = 'user atau password salah!';
-                header('Location: index.php');
-            }
-        }
-    }
+    $query = "INSERT INTO user_admin VALUES ('','$userMail','$userPass','$userName')";
+    $result = mysqli_query($koneksi, $query);
+    header('Location: index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -37,7 +21,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Login</title>
+    <title>Registrasi</title>
 </head>
 <body>
     <div class="header">
@@ -87,21 +71,29 @@ if(isset($_POST['submit'])){
                 </button>
               </div>
         </div>
-            <form class="box-right" action="index.php" method="POST">
+            <form class="box-right" action="register.php" method="POST">
              <h5><b>Selamat datang, admin!</b></h5>
-             <h3><b>Masuk Akun</b></h3>
-              <div class="input-box">
-                  <h6><b>Email</b></h6>
-                  <input type="text" placeholder="email" name="txt_email">
-              </div>
-              <div class="input-box">
+             <h3><b>Registrasi</b></h3>
+             <div class="input-box-regis">
+                <h6><b>Email</b></h6>
+                <input type="email" placeholder="email" name="txt_email" required>
+            </div>
+              <!-- <div class="input-box-regis">
+                  <h6><b>Username</b></h6>
+                  <input type="text" placeholder="username" name="txt_user">
+              </div> -->
+              <div class="input-box-regis">
                   <h6><b>Password</b></h6>
-                  <input type="password" placeholder="password" name="txt_pass">
+                  <input type="password" placeholder="password" name="txt_pass" required>
               </div>
-              <div class="regis">
-                <p class="verif">Belum Punya akun?<a href="register.php">Daftar</a></p>
-                <button type = "submit" name="submit" class="login">Masuk</button>
-              </div>
+              <div class="input-box-regis">   
+                <h6><b>Nama Lengkap</b></h6>
+                <input type="text" placeholder="nama lengkap" name="txt_namalengkap" required>
+            </div>
+            <div class="akun">
+                <p class="verif">Punya akun?<a href="index.php">Login</a></p>
+                <button type = "submit" name="register" class="register">Daftar</button>
+            </div>
             </form>   
         </div>
         

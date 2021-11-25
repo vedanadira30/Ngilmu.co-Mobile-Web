@@ -88,6 +88,26 @@ img {
 .input-box input{
     width: 85%;
     height: 40px;
+    padding-left: 10px;
+    border-radius: 8px;
+    background: #eff2f9;
+    border: none;
+    outline: none;
+}
+
+.input-box-regis{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.input-box-regis h6{
+    color: #838181;
+}
+
+.input-box-regis input{
+    width: 85%;
+    height: 40px;
+    padding-left: 10px;
     border-radius: 8px;
     background: #eff2f9;
     border: none;
@@ -105,6 +125,34 @@ img {
     outline: none;
     color: white;
     cursor: pointer;
+}
+
+.register{
+    width: 50%;
+    height: 35px;
+    margin-left: 100px;
+    border-radius: 8px;
+    background: linear-gradient(#722B90, #A060A6);
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+.akun p{
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.regis p{
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.verif a{
+    margin: 5px;
+    color: #722B90;
+    text-decoration: none;
 }
 
 /* #f5f8ff
