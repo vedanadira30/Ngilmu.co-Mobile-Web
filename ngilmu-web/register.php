@@ -72,8 +72,8 @@ if ( isset($_POST['register']) ){
               </div>
         </div>
             <form class="box-right" action="register.php" method="POST">
-             <h5><b>Selamat datang, admin!</b></h5>
-             <h3><b>Registrasi</b></h3>
+             <h5><b>Selamat datang</b></h5>
+             <h3><b>Silahkan Registrasi</b></h3>
              <div class="input-box-regis">
                 <h6><b>Email</b></h6>
                 <input type="email" placeholder="email" name="txt_email" required>
