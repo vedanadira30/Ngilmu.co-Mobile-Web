@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Dashboard</title>
+    <title>Data Siswa</title>
 </head>
 <body>
     <div class="container-dash">
@@ -21,33 +21,33 @@
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                         <span class="icon"><i class="bi bi-house-door"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="datasiswa.html">
+                    <a href="datasiswa.php">
                         <span class="icon"><i class="bi bi-person"></i></span>
                         <span class="title">Data Siswa</span>
                     </a>
                 </li>
                 <li>
-                    <a href="dataguru.html">
+                    <a href="datatutor.php">
                         <span class="icon"><i class="bi bi-people"></i></span>
-                        <span class="title">Data Guru</span>
+                        <span class="title">Data Tutor</span>
                     </a>
                 </li>
                 <li>
-                    <a href="riwayatpemesanan.html">
+                    <a href="riwayatpemesanan.php">
                         <span class="icon"><i class="bi bi-clock-history"></i></span>
                         <span class="title">Riwayat Pemesanan</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pendapatanguru.html">
+                    <a href="pendapatantutor.php">
                         <span class="icon"><i class="bi bi-wallet2"></i></span>
-                        <span class="title">Pendapatan Guru</span>
+                        <span class="title">Pendapatan Tutor</span>
                     </a>
                 </li>
                 <li>
@@ -68,7 +68,7 @@
             <!-- search -->
             <div class="search">
                 <label>
-                    <input type="text" placeholder="Search Here">
+                    <input type="search" placeholder="Search Here">
                     <i class="bi bi-search"></i>
                 </label>
             </div>
@@ -78,25 +78,54 @@
             </div>
         </div>
 
-        <!-- card -->
-        <div class="cardBox">
-            <div class="card">
-                <div>
-                    <!--menit 32.20 -->
-                    <div class="numbers">3</div>  
-                    <div class="cardName">Data Siswa</div>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">3</div>
-                    <div class="cardName">Data Guru</div>
-                </div>
-            </div>
-        </div>
+        <div class="col-md-10 p-5 pt-2">
+            <h2><i class="bi bi-person"></i></i> DATA SISWA </h2><hr>
+            <a href="" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a>
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">NO</th>
+                  <th scope="col">NAMA</th>
+                  <th scope="col">KELAS</th>
+                  <th scope="col">JENIS KELAMIN</th>
+                  <th scope="col">ALAMAT</th>
+                  <th colspan="2" scope="col">AKSI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Veda</td>
+                  <td>XII</td>
+                  <td>Perempuan</td>
+                  <td>Jember</td>
+                  <td><a href="" class="btn btn-success">Edit</a></td>
+                  <td><a href="" class="btn btn-danger">Delete</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Callista</td>
+                  <td>XI</td>
+                  <td>Perempuan</td>
+                  <td>Jember</td>
+                  <td><a href="" class="btn btn-success">Edit</a></td>
+                  <td><a href="" class="btn btn-danger">Delete</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Brando</td>
+                  <td>X</td>
+                  <td>Laki-laki</td>
+                  <td>Jember</td>
+                  <td><a href="" class="btn btn-success">Edit</a></td>
+                  <td><a href="" class="btn btn-danger">Delete</a></td>
+                  <!-- <td><i class="fas fa-edit bg-success p-2 text-white rounded" data-toogle="tooltip" title="Edit"></i></td>
+                  <td><i class="fas fa-trash-alt bg-danger p-2 text-white rounded" data-toogle="tooltip" title="Delete"></i></td> -->
+                </tr>
+        
+              </tbody>
+            </table>
 
-        <!-- matkul -->
-        <!-- menit 38.50 -->
     </div>
 
     </div>

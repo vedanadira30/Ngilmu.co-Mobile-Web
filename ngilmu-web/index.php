@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
 
         if($num != 0) {
             if($userVal==$email && $passVal==$pass){
-                header('Location: dashboard.html?email=' . urlencode($userVal));
+                header('Location: dashboard.php?email=' . urlencode($userVal));
             }else{
                 $error = 'user atau password salah!';
                 header('Location: index.php');

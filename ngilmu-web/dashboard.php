@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Pendapatan Guru</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <div class="container-dash">
@@ -21,33 +21,33 @@
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                         <span class="icon"><i class="bi bi-house-door"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="datasiswa.html">
+                    <a href="datasiswa.php">
                         <span class="icon"><i class="bi bi-person"></i></span>
                         <span class="title">Data Siswa</span>
                     </a>
                 </li>
                 <li>
-                    <a href="dataguru.html">
+                    <a href="datatutor.php">
                         <span class="icon"><i class="bi bi-people"></i></span>
-                        <span class="title">Data Guru</span>
+                        <span class="title">Data Tutor</span>
                     </a>
                 </li>
                 <li>
-                    <a href="riwayatpemesanan.html">
+                    <a href="riwayatpemesanan.php">
                         <span class="icon"><i class="bi bi-clock-history"></i></span>
                         <span class="title">Riwayat Pemesanan</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pendapatanguru.html">
+                    <a href="pendapatantutor.php">
                         <span class="icon"><i class="bi bi-wallet2"></i></span>
-                        <span class="title">Pendapatan Guru</span>
+                        <span class="title">Pendapatan Tutor</span>
                     </a>
                 </li>
                 <li>
@@ -68,7 +68,7 @@
             <!-- search -->
             <div class="search">
                 <label>
-                    <input type="search" placeholder="Search Here">
+                    <input type="text" placeholder="Search Here">
                     <i class="bi bi-search"></i>
                 </label>
             </div>
@@ -79,21 +79,21 @@
         </div>
 
         <!-- card -->
-        <!-- <div class="cardBox">
+        <div class="cardBox">
             <div class="card">
-                <div> -->
+                <div>
                     <!--menit 32.20 -->
-                    <!-- <div class="numbers">1,504</div>  
+                    <div class="numbers">3</div>  
                     <div class="cardName">Data Siswa</div>
                 </div>
             </div>
             <div class="card">
                 <div>
-                    <div class="numbers">1,504</div>
-                    <div class="cardName">Data Guru</div>
+                    <div class="numbers">3</div>
+                    <div class="cardName">Data Tutor</div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- matkul -->
         <!-- menit 38.50 -->

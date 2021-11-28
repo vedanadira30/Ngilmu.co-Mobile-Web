@@ -21,33 +21,33 @@
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                         <span class="icon"><i class="bi bi-house-door"></i></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="datasiswa.html">
+                    <a href="datasiswa.php">
                         <span class="icon"><i class="bi bi-person"></i></span>
                         <span class="title">Data Siswa</span>
                     </a>
                 </li>
                 <li>
-                    <a href="dataguru.html">
+                    <a href="datatutor.php">
                         <span class="icon"><i class="bi bi-people"></i></span>
-                        <span class="title">Data Guru</span>
+                        <span class="title">Data Tutor</span>
                     </a>
                 </li>
                 <li>
-                    <a href="riwayatpemesanan.html">
+                    <a href="riwayatpemesanan.php">
                         <span class="icon"><i class="bi bi-clock-history"></i></span>
                         <span class="title">Riwayat Pemesanan</span>
                     </a>
                 </li>
                 <li>
-                    <a href="pendapatanguru.html">
+                    <a href="pendapatantutor.php">
                         <span class="icon"><i class="bi bi-wallet2"></i></span>
-                        <span class="title">Pendapatan Guru</span>
+                        <span class="title">Pendapatan Tutor</span>
                     </a>
                 </li>
                 <li>
@@ -78,25 +78,52 @@
             </div>
         </div>
 
-        <!-- card -->
-        <!-- <div class="cardBox">
-            <div class="card">
-                <div> -->
-                    <!--menit 32.20 -->
-                    <!-- <div class="numbers">1,504</div>  
-                    <div class="cardName">Data Siswa</div>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">1,504</div>
-                    <div class="cardName">Data Guru</div>
-                </div>
-            </div>
-        </div> -->
+        <div class="col-md-10 p-5 pt-2">
+            <h2><i class="bi bi-clock-history"></i></i> RIWAYAT PEMESANAN </h2><hr>
+            <!-- <a href="" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">NO</th>
+                  <th scope="col">NAMA SISWA</th>
+                  <th scope="col">NAMA TUTOR</th>
+                  <th scope="col">MATA PELAJARAN</th>
+                  <th colspan="2" scope="col">AKSI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Veda</td>
+                  <td>Alex</td>
+                  <td>Bahasa Indonesia</td>
+                  <td><a href="" class="btn btn-success">Edit</a></td>
+                  <td><a href="" class="btn btn-danger">Delete</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Callista</td>
+                  <td>Serena</td>
+                  <td>Matematika</td>
+                  <td><a href="" class="btn btn-success">Edit</a></td>
+                  <td><a href="" class="btn btn-danger">Delete</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Brando</td>
+                  <td>Khanza</td>
+                  <td>Matematika</td>
+                  <td><a href="" class="btn btn-success">Edit</a></td>
+                  <td><a href="" class="btn btn-danger">Delete</a></td>
+                  <!-- <td><i class="fas fa-edit bg-success p-2 text-white rounded" data-toogle="tooltip" title="Edit"></i></td>
+                  <td><i class="fas fa-trash-alt bg-danger p-2 text-white rounded" data-toogle="tooltip" title="Delete"></i></td> -->
+                </tr>
+        
+              </tbody>
+            </table>
 
-        <!-- matkul -->
-        <!-- menit 38.50 -->
+        <!-- https://www.youtube.com/watch?v=ppTLhnJJiGc -->
+
     </div>
 
     </div>
