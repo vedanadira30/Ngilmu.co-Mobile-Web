@@ -102,27 +102,8 @@
                   <td><a href="" class="btn btn-success">Edit</a></td>
                   <td><a href="" class="btn btn-danger">Delete</a></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Callista</td>
-                  <td>XI</td>
-                  <td>Perempuan</td>
-                  <td>Jember</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Brando</td>
-                  <td>X</td>
-                  <td>Laki-laki</td>
-                  <td>Jember</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
                   <!-- <td><i class="fas fa-edit bg-success p-2 text-white rounded" data-toogle="tooltip" title="Edit"></i></td>
                   <td><i class="fas fa-trash-alt bg-danger p-2 text-white rounded" data-toogle="tooltip" title="Delete"></i></td> -->
-                </tr>
-        
               </tbody>
             </table>
 

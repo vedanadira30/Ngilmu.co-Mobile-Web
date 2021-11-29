@@ -1,3 +1,17 @@
+<?php
+require ("koneksi.php");
+//$email = $_GET['user_fullname'];
+
+session_start();
+
+if(!isset($_SESSION['id_admin'])) {
+  $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
+  header('Location: index.php');
+
+}
+$sesID = $_SESSION['id_admin'];
+$sesName = $_SESSION['nama_lengkap'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,10 +82,14 @@
             <!-- search -->
             <div class="search">
                 <label>
-                    <input type="text" placeholder="Search Here">
+                    <input type="search" placeholder="Search Here">
                     <i class="bi bi-search"></i>
                 </label>
             </div>
+            <!-- Name -->
+            <!-- <div class="nama">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> //php echo $sesName; ?></span>
+            </div> -->
             <!-- userImg -->
             <div class="user">
                 <img src="images/img1.jpg">

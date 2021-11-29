@@ -13,13 +13,18 @@ if(isset($_POST['submit'])){
         $num = mysqli_num_rows($result);
 
         while($row = mysqli_fetch_array($result)){
+            $id = $row['id_admin'];
             $userVal = $row['email'];
             $passVal = $row['password'];
+            $uName = $_POST['nama_lengkap'];
         }
 
         if($num != 0) {
             if($userVal==$email && $passVal==$pass){
-                header('Location: dashboard.php?email=' . urlencode($userVal));
+                // header('Location: dashboard.php?email=' . urlencode($userVal));
+                $_SESSION['id_admin'] = $id;
+                $_SESSION['nama_lengkap'] = $uName;
+                header('Location: dashboard.php');
             }else{
                 $error = 'user atau password salah!';
                 header('Location: index.php');

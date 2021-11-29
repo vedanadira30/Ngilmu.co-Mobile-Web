@@ -68,7 +68,7 @@
             <!-- search -->
             <div class="search">
                 <label>
-                    <input type="text" placeholder="Search Here">
+                    <input type="search" placeholder="Search Here"> 
                     <i class="bi bi-search"></i>
                 </label>
             </div>
@@ -106,35 +106,9 @@
                   <td><a href="" class="btn btn-success">Edit</a></td>
                   <td><a href="" class="btn btn-danger">Delete</a></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Serena</td>
-                  <td>0812345679</td>
-                  <td>Perempuan</td>
-                  <td>13 Maret 1999</td>
-                  <td>Politeknik Negeri Jember</td>
-                  <td>Jember</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Khanza</td>
-                  <td>0851234679</td>
-                  <td>Perempuan</td>
-                  <td>1 Februari 2000</td>
-                  <td>Politeknik Negeri Jember</td>
-                  <td>Jember</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
-                  <!-- <td><i class="fas fa-edit bg-success p-2 text-white rounded" data-toogle="tooltip" title="Edit"></i></td>
-                  <td><i class="fas fa-trash-alt bg-danger p-2 text-white rounded" data-toogle="tooltip" title="Delete"></i></td> -->
-                </tr>
-        
               </tbody>
             </table>
     </div>
-
     </div>
 
 <script>

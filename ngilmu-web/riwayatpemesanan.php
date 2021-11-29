@@ -1,3 +1,17 @@
+<?php
+require ("koneksi.php");
+//$email = $_GET['user_fullname'];
+
+session_start();
+
+if(!isset($_SESSION['id_admin'])) {
+  $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
+  header('Location: index.php');
+
+}
+$sesID = $_SESSION['id_admin'];
+$sesName = $_SESSION['nama_lengkap'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,32 +106,24 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Veda</td>
-                  <td>Alex</td>
-                  <td>Bahasa Indonesia</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Callista</td>
-                  <td>Serena</td>
-                  <td>Matematika</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Brando</td>
-                  <td>Khanza</td>
-                  <td>Matematika</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
-                  <!-- <td><i class="fas fa-edit bg-success p-2 text-white rounded" data-toogle="tooltip" title="Edit"></i></td>
-                  <td><i class="fas fa-trash-alt bg-danger p-2 text-white rounded" data-toogle="tooltip" title="Delete"></i></td> -->
-                </tr>
+                <?php
+                 $no = 1;
+                 $query = "SELECT * FROM trans_pemesanan 
+                            INNER JOIN user_detail ON trans_pemesanan.id_user = user_detail.id_user
+                            INNER JOIN user_tutor ON trans_pemesanan.id_tutor = user_tutor.id_tutor
+                            INNER JOIN tabel_mapel ON trans_pemesanan.id_mapel = tabel_mapel.id_mapel";
+                 $result = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
+
+                 while($row = mysqli_fetch_array($result)){ ?>
+                    <tr>
+                        <td><?=$no++?></td>
+                        <td><?=$row['fullname']?></td>
+                        <td><?=$row['fullname_tutor']?></td>
+                        <td><?=$row['mata_pelajaran']?></td>
+                        <td><a href="" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                <?php
+                 } ?>
         
               </tbody>
             </table>
