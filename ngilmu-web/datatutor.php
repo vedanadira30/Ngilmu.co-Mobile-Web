@@ -1,3 +1,17 @@
+<?php
+require ("koneksi.php");
+//$email = $_GET['user_fullname'];
+
+session_start();
+
+if(!isset($_SESSION['id_admin'])) {
+  $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
+  header('Location: index.php');
+
+}
+$sesID = $_SESSION['id_admin'];
+$sesName = $_SESSION['nama_lengkap'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,6 +109,24 @@
                 </tr>
               </thead>
               <tbody>
+              <?php
+                 $no = 1;
+                 $query = "SELECT * FROM user_tutor";
+                 $result = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
+
+                 while($row = mysqli_fetch_array($result)){ ?>
+                    <tr>
+                        <td><?=$no++?></td>
+                        <td><?=$row['fullname_tutor']?></td>
+                        <td><?=$row['no_telp']?></td>
+                        <td><?=$row['gender']?></td>
+                        <td><?=$row['tgl_lahir']?></td>
+                        <td><?=$row['instansi']?></td>
+                        <td><?=$row['alamat']?></td>
+                        <td><a href="" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                <?php
+                 } ?>
                 <tr>
                   <th scope="row">1</th>
                   <td>Alex</td>
