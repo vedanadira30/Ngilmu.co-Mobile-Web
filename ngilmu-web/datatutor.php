@@ -1,6 +1,5 @@
 <?php
 require ("koneksi.php");
-//$email = $_GET['user_fullname'];
 
 session_start();
 
@@ -99,6 +98,8 @@ $sesName = $_SESSION['nama_lengkap'];
               <thead>
                 <tr>
                   <th scope="col">NO</th>
+                  <th scope="col">EMAIL</th>
+                  <th scope="col">PASSWORD</th>
                   <th scope="col">NAMA</th>
                   <th scope="col">NOMER HP</th>
                   <th scope="col">JENIS KELAMIN</th>
@@ -114,30 +115,32 @@ $sesName = $_SESSION['nama_lengkap'];
                  $query = "SELECT * FROM user_tutor";
                  $result = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 
-                 while($row = mysqli_fetch_array($result)){ ?>
+                 while($row = mysqli_fetch_array($result)){ 
+                        $id = $row['id_tutor'];
+                        $email = $row['email'];
+                        $password = $row['password'];
+                        $fullname = $row['fullname_tutor'];
+                        $instansi = $row['instansi'];
+                        $notelp = $row['no_telp'];
+                        $gender = $row['gender'];
+                        $alamat = $row['alamat'];
+                        $tgllahir = $row['tgl_lahir'];
+                    ?>
                     <tr>
                         <td><?=$no++?></td>
-                        <td><?=$row['fullname_tutor']?></td>
-                        <td><?=$row['no_telp']?></td>
-                        <td><?=$row['gender']?></td>
-                        <td><?=$row['tgl_lahir']?></td>
-                        <td><?=$row['instansi']?></td>
-                        <td><?=$row['alamat']?></td>
-                        <td><a href="" class="btn btn-danger">Delete</a></td>
+                        <td><?php echo $email; ?></td>
+                        <td><?php echo $password; ?></td>
+                        <td><?php echo $fullname; ?></td>
+                        <td><?php echo $instansi; ?></td>
+                        <td><?php echo $alamat; ?></td>
+                        <td><?php echo $gender; ?></td>
+                        <td><?php echo $notelp; ?></td>
+                        <td><?php echo $tgllahir; ?></td>
+                        <td><a href="tutor/editdatatutor.php?id=<?php echo $row['id_tutor']; ?>" class="btn btn-success">Edit</a></td>
+                        <td><a href="tutor/deletedatatutor.php?id=<?php echo $row['id_tutor']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Alex</td>
-                  <td>0897654321</td>
-                  <td>Laki-Laki</td>
-                  <td>24 Juli 2000</td>
-                  <td>Politeknik Negeri Jember</td>
-                  <td>Jember</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
-                </tr>
               </tbody>
             </table>
     </div>

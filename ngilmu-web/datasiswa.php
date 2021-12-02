@@ -1,6 +1,5 @@
 <?php
 require ("koneksi.php");
-//$email = $_GET['user_fullname'];
 
 session_start();
 
@@ -92,13 +91,15 @@ $sesName = $_SESSION['nama_lengkap'];
             </div>
         </div>
 
-        <div class="col-md-10 p-5 pt-2">
+        <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-person"></i></i> DATA SISWA </h2><hr>
-            <a href="" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a>
+            <a href="siswa/tambahdatasiswa.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a>
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
                   <th scope="col">NO</th>
+                  <th scope="col">EMAIL</th>
+                  <th scope="col">PASSWORD</th>
                   <th scope="col">NAMA</th>
                   <th scope="col">KELAS</th>
                   <th scope="col">JENIS KELAMIN</th>
@@ -112,28 +113,28 @@ $sesName = $_SESSION['nama_lengkap'];
                  $query = "SELECT * FROM user_detail";
                  $result = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 
-                 while($row = mysqli_fetch_array($result)){ ?>
+                 while($row = mysqli_fetch_array($result)){ 
+                        $id = $row['id_user'];
+                        $email = $row['email'];
+                        $password = $row['password'];
+                        $fullname = $row['fullname'];
+                        $grade = $row['grade'];
+                        $gender = $row['gender'];
+                        $alamat = $row['alamat'];
+                    ?>
                     <tr>
                         <td><?=$no++?></td>
-                        <td><?=$row['fullname']?></td>
-                        <td><?=$row['grade']?></td>
-                        <td><?=$row['gender']?></td>
-                        <td><?=$row['alamat']?></td>
-                        <td><a href="" class="btn btn-danger">Delete</a></td>
+                        <td><?php echo $email; ?></td>
+                        <td><?php echo $password; ?></td>
+                        <td><?php echo $fullname; ?></td>
+                        <td><?php echo $grade; ?></td>
+                        <td><?php echo $gender; ?></td>
+                        <td><?php echo $alamat; ?></td>
+                        <td><a href="siswa/editdatasiswa.php?id=<?php echo $row['id_user']; ?>" class="btn btn-success">Edit</a></td>
+                        <td><a href="siswa/deletedatasiswa.php?id=<?php echo $row['id_user']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Veda</td>
-                  <td>XII</td>
-                  <td>Perempuan</td>
-                  <td>Jember</td>
-                  <td><a href="" class="btn btn-success">Edit</a></td>
-                  <td><a href="" class="btn btn-danger">Delete</a></td>
-                </tr>
-                  <!-- <td><i class="fas fa-edit bg-success p-2 text-white rounded" data-toogle="tooltip" title="Edit"></i></td>
-                  <td><i class="fas fa-trash-alt bg-danger p-2 text-white rounded" data-toogle="tooltip" title="Delete"></i></td> -->
               </tbody>
             </table>
 

@@ -16,14 +16,14 @@ if(isset($_POST['submit'])){
             $id = $row['id_admin'];
             $userVal = $row['email'];
             $passVal = $row['password'];
-            $uName = $_POST['nama_lengkap'];
+            $uName = $row['nama_lengkap'];
         }
 
         if($num != 0) {
             if($userVal==$email && $passVal==$pass){
                 // header('Location: dashboard.php?email=' . urlencode($userVal));
                 $_SESSION['id_admin'] = $id;
-                $_SESSION['nama_lengkap'] = $uName;
+                $_SESSION['email'] = $userVal;
                 header('Location: dashboard.php');
             }else{
                 $error = 'user atau password salah!';
