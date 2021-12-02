@@ -8,7 +8,7 @@ if(!isset($_SESSION['id_admin'])) {
     header('Location: index.php');
 }
 $sesID = $_SESSION['id_admin'];
-$sesName = $_SESSION['nama_lengkap'];  
+$sesName = $_SESSION['email'];  
 
 if (isset($_POST['tambah'])) {
    $email = $_POST['email'];
@@ -32,7 +32,7 @@ if (isset($_POST['tambah'])) {
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Data Siswa</title>
+    <title>Tambah Data Siswa</title>
 </head>
 <body>
     <div class="container-dash">
@@ -104,9 +104,7 @@ if (isset($_POST['tambah'])) {
 
         <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-person"></i></i> TAMBAH DATA SISWA </h2><hr>
-            <!-- <a href="siswa/tambahdatasiswa.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
             <div class="row mb-5">
-
                         <div class="col-12">
                             <form action="tambahdatasiswa.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">

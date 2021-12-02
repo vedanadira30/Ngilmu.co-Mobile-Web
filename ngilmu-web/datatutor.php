@@ -9,7 +9,7 @@ if(!isset($_SESSION['id_admin'])) {
 
 }
 $sesID = $_SESSION['id_admin'];
-$sesName = $_SESSION['nama_lengkap'];
+$sesName = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,11 +101,11 @@ $sesName = $_SESSION['nama_lengkap'];
                   <th scope="col">EMAIL</th>
                   <th scope="col">PASSWORD</th>
                   <th scope="col">NAMA</th>
-                  <th scope="col">NOMER HP</th>
-                  <th scope="col">JENIS KELAMIN</th>
-                  <th scope="col">TANGGAL LAHIR</th>
                   <th scope="col">INSTANSI</th>
+                  <th scope="col">NO HP</th>
+                  <th scope="col">GENDER</th>
                   <th scope="col">ALAMAT</th>
+                  <th scope="col">TGL LAHIR</th>
                   <th colspan="2" scope="col">AKSI</th>
                 </tr>
               </thead>
@@ -132,9 +132,9 @@ $sesName = $_SESSION['nama_lengkap'];
                         <td><?php echo $password; ?></td>
                         <td><?php echo $fullname; ?></td>
                         <td><?php echo $instansi; ?></td>
-                        <td><?php echo $alamat; ?></td>
-                        <td><?php echo $gender; ?></td>
                         <td><?php echo $notelp; ?></td>
+                        <td><?php echo $gender; ?></td>
+                        <td><?php echo $alamat; ?></td>
                         <td><?php echo $tgllahir; ?></td>
                         <td><a href="tutor/editdatatutor.php?id=<?php echo $row['id_tutor']; ?>" class="btn btn-success">Edit</a></td>
                         <td><a href="tutor/deletedatatutor.php?id=<?php echo $row['id_tutor']; ?>" class="btn btn-danger">Delete</a></td>

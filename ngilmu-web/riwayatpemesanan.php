@@ -1,6 +1,5 @@
 <?php
 require ("koneksi.php");
-//$email = $_GET['user_fullname'];
 
 session_start();
 
@@ -10,7 +9,7 @@ if(!isset($_SESSION['id_admin'])) {
 
 }
 $sesID = $_SESSION['id_admin'];
-$sesName = $_SESSION['nama_lengkap'];
+$sesName = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +93,7 @@ $sesName = $_SESSION['nama_lengkap'];
 
         <div class="col-md-10 p-5 pt-2">
             <h2><i class="bi bi-clock-history"></i></i> RIWAYAT PEMESANAN </h2><hr>
-            <!-- <a href="" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
+            <!-- <a href="pemesanan/tambahdatapemesanan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH RIWAYAT PEMESANAN</a> -->
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
@@ -120,7 +119,8 @@ $sesName = $_SESSION['nama_lengkap'];
                         <td><?=$row['fullname']?></td>
                         <td><?=$row['fullname_tutor']?></td>
                         <td><?=$row['mata_pelajaran']?></td>
-                        <td><a href="" class="btn btn-danger">Delete</a></td>
+                        <!-- <td><a href="" class="btn btn-success">Edit</a></td> -->
+                        <td><a href="pemesanan/deletepemesanan.php?id_pemesanan=<?php echo $row['id_pemesanan']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>

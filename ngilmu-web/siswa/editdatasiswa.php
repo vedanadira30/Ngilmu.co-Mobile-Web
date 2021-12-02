@@ -8,23 +8,23 @@ if(!isset($_SESSION['id_admin'])) {
     header('Location: index.php');
 }
 $sesID = $_SESSION['id_admin'];
-$sesName = $_SESSION['nama_lengkap'];  
+$sesName = $_SESSION['email'];  
 
 if (isset($_POST['update'])) {
-   $id = $_POST['id_user'];
+//    $id = $_POST['id_user'];
    $email = $_POST['email'];
    $password = $_POST['password'];
    $fullname = $_POST['fullname'];
    $grade = $_POST['grade'];
    $gender = $_POST['gender'];
    $alamat = $_POST['alamat'];
-   $query = "UPDATE user_detail SET email='$email', password='$password', fullname='$fullname',
-            grade='$grade', gender='$gender', alamat='$alamat' where id_user='$id'";
+   $query = "UPDATE user_detail SET password='$password', fullname='$fullname',
+            grade='$grade', gender='$gender', alamat='$alamat' where email='$email'";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datasiswa.php');
 }
 
-    $id = $_GET['id'];
+    $id = $_GET['id_user'];
     $query = "SELECT * FROM user_detail WHERE id_user='$id'";
     $result = mysqli_query($koneksi, $query) or die (mysql_error());
     $no = 1;
@@ -124,7 +124,6 @@ if (isset($_POST['update'])) {
             <div class="col-12">
                 <form id="form_validation" method="POST">
                             <div class="form-group form-float">
-                            <!-- <input type="hidden" name="txt_id" value="<= $id ?>"> -->
                                 <div class="form-line">
                                     <label class="form-label">Email</label>
                                     <input type="email" class="form-control" name="email" value="<?php echo $email;?>" required>
@@ -146,12 +145,6 @@ if (isset($_POST['update'])) {
                                 <label for="exampleFormControlInput1">Grade</label>
                                 <input type="text" class="form-control" name="grade" value="<?php echo $grade; ?>">
                             </div>
-                            <!-- <div class="form-group form-float">
-                                <div class="form-line">
-                                    <label class="form-label">Grade</label>
-                                    <input type="text" class="form-control" name="grade" value="<php echo $grade;?>" required>
-                                </div>
-                            </div> -->
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <label class="form-label">Gender</label>

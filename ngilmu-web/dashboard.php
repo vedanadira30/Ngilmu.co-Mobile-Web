@@ -10,7 +10,7 @@ if(!isset($_SESSION['id_admin'])) {
 
 }
 $sesID = $_SESSION['id_admin'];
-$sesName = $_SESSION['nama_lengkap'];
+$sesName = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,21 +100,28 @@ $sesName = $_SESSION['nama_lengkap'];
         <div class="cardBox">
             <div class="card">
                 <div>
-                    <!--menit 32.20 -->
-                    <div class="numbers">3</div>  
-                    <div class="cardName">Data Siswa</div>
+                    <?php 
+                        $query = "SELECT * FROM user_detail ORDER BY id_user";
+                        $result = mysqli_query($koneksi, $query);
+                        $row = mysqli_num_rows($result);
+                    ?>
+                        <div class="numbers"><?php echo '<h1>'.$row.'</h1>' ;?></div>  
+                        <div class="cardName">Data Siswa</div>
                 </div>
             </div>
             <div class="card">
                 <div>
-                    <div class="numbers">3</div>
-                    <div class="cardName">Data Tutor</div>
+                    <?php 
+                        $query = "SELECT * FROM user_tutor ORDER BY id_tutor";
+                        $result = mysqli_query($koneksi, $query);
+                        $row = mysqli_num_rows($result);
+                    ?>
+                        <div class="numbers"><?php echo '<h1>'.$row.'</h1>' ;?></div>
+                        <div class="cardName">Data Tutor</div>
                 </div>
             </div>
         </div>
 
-        <!-- matkul -->
-        <!-- menit 38.50 -->
     </div>
 
     </div>

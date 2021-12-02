@@ -9,7 +9,7 @@ if(!isset($_SESSION['id_admin'])) {
 
 }
 $sesID = $_SESSION['id_admin'];
-$sesName = $_SESSION['nama_lengkap'];
+$sesName = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,8 +130,8 @@ $sesName = $_SESSION['nama_lengkap'];
                         <td><?php echo $grade; ?></td>
                         <td><?php echo $gender; ?></td>
                         <td><?php echo $alamat; ?></td>
-                        <td><a href="siswa/editdatasiswa.php?id=<?php echo $row['id_user']; ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="siswa/deletedatasiswa.php?id=<?php echo $row['id_user']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="siswa/editdatasiswa.php?id_user=<?php echo $row['id_user']; ?>" class="btn btn-success">Edit</a></td>
+                        <td><a href="siswa/deletedatasiswa.php?id_user=<?php echo $row['id_user']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>
