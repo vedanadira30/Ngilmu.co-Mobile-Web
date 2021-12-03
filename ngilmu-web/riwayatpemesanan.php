@@ -101,6 +101,7 @@ $sesName = $_SESSION['email'];
                   <th scope="col">NAMA SISWA</th>
                   <th scope="col">NAMA TUTOR</th>
                   <th scope="col">MATA PELAJARAN</th>
+                  <th scope="col">TANGGAL PEMESANAN</th>
                   <th colspan="2" scope="col">AKSI</th>
                 </tr>
               </thead>
@@ -119,6 +120,7 @@ $sesName = $_SESSION['email'];
                         <td><?=$row['fullname']?></td>
                         <td><?=$row['fullname_tutor']?></td>
                         <td><?=$row['mata_pelajaran']?></td>
+                        <td><?=$row['tgl_pemesanan']?></td>
                         <!-- <td><a href="" class="btn btn-success">Edit</a></td> -->
                         <td><a href="pemesanan/deletepemesanan.php?id_pemesanan=<?php echo $row['id_pemesanan']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
