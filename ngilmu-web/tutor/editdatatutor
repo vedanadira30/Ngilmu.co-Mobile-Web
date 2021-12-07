@@ -11,7 +11,7 @@ $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];  
 
 if (isset($_POST['update'])) {
-//    $id = $_POST['id_user'];
+//    $id = $_POST['id_tutor'];
    $email = $_POST['email'];
    $password = $_POST['password'];
    $fullname = $_POST['fullname_tutor'];
