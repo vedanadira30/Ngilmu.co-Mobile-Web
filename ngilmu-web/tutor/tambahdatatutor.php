@@ -10,37 +10,17 @@ if(!isset($_SESSION['id_admin'])) {
 $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];  
 
-if (isset($_POST['update'])) {
-//    $id = $_POST['id_tutor'];
+if (isset($_POST['tambah'])) {
    $email = $_POST['email'];
    $password = $_POST['password'];
-   $fullname = $_POST['fullname_tutor'];
-   $grade = $_POST['instansi'];
-   $gender = $_POST['alamat'];
-   $alamat = $_POST['gender'];
-   $no_telp = $_POST['no_telp'];
-   $tgl_lahir = $_POST['tgl_lahir'];
-   $query = "UPDATE user_tutor SET password='$password', fullname='$fullname_tutor',
-            instansi='$instansi', alamat='$alamat', gender='$gender', no_telp='$no_telp', tgl_lahir='$tgl_lahir' where email='$email'";
+   $fullname = $_POST['fullname'];
+   $grade = $_POST['grade'];
+   $gender = $_POST['gender'];
+   $alamat = $_POST['alamat'];
+   $query = "INSERT INTO user_detail VALUES ('','$email','$password','$fullname','$grade','$gender','$alamat')";
    $result = mysqli_query($koneksi, $query);
-   header('Location: ../datatutor.php');
+   header('Location: ../datasiswa.php');
 }
-
-    $id = $_GET['id_tutor'];
-    $query = "SELECT * FROM user_tutor WHERE id_tutor='$id'";
-    $result = mysqli_query($koneksi, $query) or die (mysql_error());
-    $no = 1;
-    while ($row = mysqli_fetch_array($result)){
-        $id_tutor = $row['id_tutor'];
-        $email = $row['email'];
-        $password = $row['password'];
-        $fullname = $row['fullname_tutor'];
-        $instansi = $row['instansi'];
-        $alamat= $row['alamat'];
-        $gender = $row['gender'];
-        $no_telp = $row['no_telp'];
-        $tgl_lahir = $row['tgl_lahir'];
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +32,7 @@ if (isset($_POST['update'])) {
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Data Tutor</title>
+    <title>Tambah Data Siswa</title>
 </head>
 <body>
     <div class="container-dash">
@@ -123,58 +103,48 @@ if (isset($_POST['update'])) {
         </div>
 
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> EDIT DATA TUTOR </h2><hr>
-            <!-- <a href="siswa/tambahdatasiswa.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
-            <div class="col-12">
-                <form id="form_validation" method="POST">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" value="<?php echo $email;?>" required>
+            <h2><i class="bi bi-person"></i></i> TAMBAH DATA SISWA </h2><hr>
+            <div class="row mb-5">
+                        <div class="col-12">
+                            <form action="tambahdatasiswa.php" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Email</label>
+                                    <input type="email" class="form-control" name="email" required
+                                        placeholder="email">
                                 </div>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <label class="form-label">Password</label>
-                                    <input type="text" class="form-control" name="password" value="<?php echo $password;?>" required>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Password</label>
+                                    <input type="text" class="form-control" name="password" required
+                                        placeholder="password">
                                 </div>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <label class="form-label">Fullname</label>
-                                    <input type="text" class="form-control" name="fullname" value="<?php echo $fullname_tutor;?>" required>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Fullname</label>
+                                    <input type="text" class="form-control" name="fullname" required
+                                        placeholder="fullname">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Instansi</label>
-                                <input type="text" class="form-control" name="instansi" value="<?php echo $instansi; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Alamat</label>
-                                <textarea class="form-control" name="alamat" rows="3"><?= $alamat; ?></textarea>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <label class="form-label">Gender</label>
-                                    <input type="text" class="form-control" name="gender" value="<?php echo $gender;?>" required>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Grade</label>
+                                    <input type="text" class="form-control" name="grade" required
+                                        placeholder="grade">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">No Telp</label>
-                                <textarea class="form-control" name="no_telp" rows="3"><?= $no_telp; ?></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Tanggal Lahir</label>
-                                <textarea class="form-control" name="tgl_lahir" rows="3"><?= $tgl_lahir; ?></textarea>
-                            </div>
-                           
-                            <button class="btn btn-primary" type="submit" name="update">Simpan Perubahan</button>
-                            <a href="../datatutor.php">
-                                <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
-                            </a>
-                        </form>
-                    </div>
-                  </tbody>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Gender</label>
+                                    <input type="text" class="form-control" name="gender" required
+                                        placeholder="gender">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Alamat</label>
+                                    <textarea class="form-control" name="alamat" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>
+                                    <a href="../datasiswa.php">
+                                        <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+              </tbody>
             </table>
 
     </div>
