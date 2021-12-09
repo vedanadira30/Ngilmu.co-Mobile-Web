@@ -138,7 +138,7 @@ if (isset($_POST['tambah'])) {
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">No HP</label>
                                     <input type="text" class="form-control" name="no_telp" required
-                                        placeholder="motelp">
+                                        placeholder="notelp">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Gender</label>
                                     <input type="text" class="form-control" name="gender" required
