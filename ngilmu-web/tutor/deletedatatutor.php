@@ -12,7 +12,7 @@ require ('../koneksi.php');
 //$tgllahir = $row['tgl_lahir'];
 
 // mysqli_query($koneksi, "DELETE FROM user_tutor WHERE '$id' = id_tutor") or die (mysql_error());
-mysqli_query($koneksi, "DELETE FROM user_tutor WHERE id = '$_GET[id]'") or die (mysql_error());
+mysqli_query($koneksi, "DELETE FROM user_tutor WHERE id_tutor = '$_GET[id_tutor]'") or die (mysql_error());
 header('Location: ../datatutor.php ');
 
 ?>
