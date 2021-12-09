@@ -133,7 +133,7 @@ if (isset($_POST['tambah'])) {
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">No HP</label>
                                     <input type="text" class="form-control" name="no_telp" required
-                                        placeholder="notelp">
+                                        placeholder="no telp">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Gender</label>
                                     <input type="text" class="form-control" name="gender" required
@@ -146,7 +146,7 @@ if (isset($_POST['tambah'])) {
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Tanggal Lahir</label>
                                     <input type="text" class="form-control" name="tgl_lahir" required
-                                        placeholder="tgllahir">
+                                        placeholder="tangal lahir">
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>
                                     <a href="../datatutor.php">
