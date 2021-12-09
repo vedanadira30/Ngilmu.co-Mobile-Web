@@ -20,7 +20,7 @@ if (isset($_POST['tambah'])) {
     $gender = $row['gender'];
     $alamat = $row['alamat'];
     $tgllahir = $row['tgl_lahir'];
-   $query = "INSERT INTO user_detail VALUES ('','$email','$password','$fullname','$instansi','$notelp','$gender','$alamat','$tgllahir')";
+   $query = "INSERT INTO user_detail VALUES ('','$id','$email','$password','$fullname','$instansi','$notelp','$gender','$alamat','$tgllahir')";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datatutor.php');
 }
