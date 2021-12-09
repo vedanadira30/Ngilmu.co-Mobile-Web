@@ -109,7 +109,7 @@ if (isset($_POST['tambah'])) {
             <h2><i class="bi bi-person"></i></i> TAMBAH DATA TUTOR </h2><hr>
             <div class="row mb-5">
                         <div class="col-12">
-                            <form action="datatutor.php" method="post" enctype="multipart/form-data">
+                            <form action="tambahdatatutor.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Email</label>
                                     <input type="email" class="form-control" name="email" required
