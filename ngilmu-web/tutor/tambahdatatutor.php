@@ -149,7 +149,7 @@ if (isset($_POST['tambah'])) {
                                         placeholder="tgllahir">
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>
-                                    <a href="../datasiswa.php">
+                                    <a href="../datatutor.php">
                                         <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
                                     </a>
                                 </div>
