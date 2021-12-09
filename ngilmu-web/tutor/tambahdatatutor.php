@@ -110,11 +110,6 @@ if (isset($_POST['tambah'])) {
             <div class="row mb-5">
                         <div class="col-12">
                             <form action="tambahdatasiswa.php" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                    <label for="exampleFormControlInput1">Id</label>
-                                    <input type="email" class="form-control" name="id_tutor" required
-                                        placeholder="id">
-                                </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Email</label>
                                     <input type="email" class="form-control" name="email" required
