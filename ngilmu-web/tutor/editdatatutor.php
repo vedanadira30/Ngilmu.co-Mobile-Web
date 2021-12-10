@@ -12,17 +12,16 @@ $sesName = $_SESSION['email'];
 
 if (isset($_POST['update'])) {
 //    $id = $_POST['id_tutor'];
-    $id = $row['id_tutor'];
-    $email = $row['email'];
-    $password = $row['password'];
-    $fullname = $row['fullname_tutor'];
-    $instansi = $row['instansi'];
-    $notelp = $row['no_telp'];
-    $gender = $row['gender'];
-    $alamat = $row['alamat'];
-    $tgllahir = $row['tgl_lahir'];
-   $query = "UPDATE user_tutor SET password='$password', fullname='$fullname',
-            instansi='$instansi',notelp='$notelp', gender='$gender', alamat='$alamat', tgllahir='$tgllahir' where email='$email'";
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $fullname = $_POST['fullname_tutor'];
+    $instansi = $_POST['instansi'];
+    $notelp = $_POST['no_telp'];
+    $gender = $_POST['gender'];
+    $alamat = $_POST['alamat'];
+    $tgllahir = $_POST['tgl_lahir'];
+   $query = "UPDATE user_tutor SET password='$password', fullname_tutor='$fullname',
+            instansi='$instansi',no_telp='$notelp', gender='$gender', alamat='$alamat', tgl_lahir='$tgllahir' where email='$email'";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datatutor.php');
 }
@@ -32,7 +31,7 @@ if (isset($_POST['update'])) {
     $result = mysqli_query($koneksi, $query) or die (mysql_error());
     $no = 1;
     while ($row = mysqli_fetch_array($result)){
-        $id = $row['id_tutor'];
+        $idtutor = $row['id_tutor'];
         $email = $row['email'];
         $password = $row['password'];
         $fullname = $row['fullname_tutor'];
@@ -40,6 +39,7 @@ if (isset($_POST['update'])) {
         $notelp = $row['no_telp'];
         $gender = $row['gender'];
         $alamat = $row['alamat'];
+        $tgllahir = $row['tgl_lahir'];
     }
 ?>
 <!DOCTYPE html>
@@ -142,7 +142,7 @@ if (isset($_POST['update'])) {
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <label class="form-label">Fullname</label>
-                                    <input type="text" class="form-control" name="fullname" value="<?php echo $fullname;?>" required>
+                                    <input type="text" class="form-control" name="fullname_tutor" value="<?php echo $fullname;?>" required>
                                 </div>
                             </div>
                             <div class="form-group form-float">
@@ -153,7 +153,7 @@ if (isset($_POST['update'])) {
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">No HP</label>
-                                <input type="text" class="form-control" name="no telp" value="<?php echo $notelp; ?>">
+                                <input type="text" class="form-control" name="no_telp" value="<?php echo $notelp; ?>" required>
                             </div>
                             <div class="form-group form-float">
                                 <div class="form-line">
@@ -168,7 +168,7 @@ if (isset($_POST['update'])) {
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <label class="form-label">Tanggal Lahir</label>
-                                    <input type="text" class="form-control" name="tgl lahir" value="<?php echo $tgllahir;?>" required>
+                                    <input type="date" class="form-control" name="tgl_lahir" value="<?php echo $tgllahir;?>" required>
                                 </div>
                             </div>
                             <button class="btn btn-primary" type="submit" name="update">Simpan Perubahan</button>

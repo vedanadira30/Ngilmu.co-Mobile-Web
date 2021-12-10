@@ -136,8 +136,8 @@ $sesName = $_SESSION['email'];
                         <td><?php echo $gender; ?></td>
                         <td><?php echo $alamat; ?></td>
                         <td><?php echo $tgllahir; ?></td>
-                        <td><a href="tutor/editdatatutor.php?id=<?php echo $row['id_tutor']; ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="tutor/deletedatatutor.php?id=<?php echo $row['id_tutor']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="tutor/editdatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-success">Edit</a></td>
+                        <td><a href="tutor/deletedatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>

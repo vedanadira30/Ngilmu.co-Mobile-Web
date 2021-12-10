@@ -11,16 +11,16 @@ $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];  
 
 if (isset($_POST['tambah'])) {
-    $id = $row['id_tutor'];
-    $email = $row['email'];
-    $password = $row['password'];
-    $fullname = $row['fullname_tutor'];
-    $instansi = $row['instansi'];
-    $notelp = $row['no_telp'];
-    $gender = $row['gender'];
-    $alamat = $row['alamat'];
-    $tgllahir = $row['tgl_lahir'];
-   $query = "INSERT INTO user_detail VALUES ('','$id','$email','$password','$fullname','$instansi','$notelp','$gender','$alamat','$tgllahir')";
+    // $id = $row['id_tutor'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $fullname = $_POST['fullname_tutor'];
+    $instansi = $_POST['instansi'];
+    $notelp = $_POST['no_telp'];
+    $gender = $_POST['gender'];
+    $alamat = $_POST['alamat'];
+    $tgllahir = $_POST['tgl_lahir'];
+   $query = "INSERT INTO user_tutor VALUES ('','$email','$password','$fullname','$instansi','$alamat','$gender','$notelp','$tgllahir')";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datatutor.php');
 }
@@ -145,7 +145,7 @@ if (isset($_POST['tambah'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Tanggal Lahir</label>
-                                    <input type="text" class="form-control" name="tgl_lahir" required
+                                    <input type="date" class="form-control" name="tgl_lahir" required
                                         placeholder="tangal lahir">
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>
