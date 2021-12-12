@@ -21,7 +21,7 @@ $sesName = $_SESSION['email'];
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Pendapatan Guru</title>
+    <title>Pendapatan Tutor</title>
 </head>
 <body>
     <div class="container-dash">
@@ -99,7 +99,7 @@ $sesName = $_SESSION['email'];
                 <tr>
                   <th scope="col">NO</th>
                   <th scope="col">NAMA TUTOR</th>
-                  <th scope="col">MATA PELAJARAN</th>
+                  <!-- <th scope="col">MATA PELAJARAN</th> -->
                   <th scope="col">NO HP</th>
                   <th scope="col">ALAMAT</th>
                   <th scope="col">TOTAL PENDAPATAN</th>
@@ -110,15 +110,15 @@ $sesName = $_SESSION['email'];
                 <?php
                  $no = 1;
                  $query = "SELECT * FROM tbl_pendapatan
-                            INNER JOIN user_tutor ON tbl_pendapatan.id_tutor = user_tutor.id_tutor
-                            INNER JOIN tabel_mapel ON tbl_pendapatan.id_mapel = tabel_mapel.id_mapel";
+                            INNER JOIN user_tutor ON tbl_pendapatan.id_tutor = user_tutor.id_tutor";
+                            // INNER JOIN tabel_mapel ON tbl_pendapatan.id_mapel = tabel_mapel.id_mapel
                  $result = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 
                  while($row = mysqli_fetch_array($result)){ ?>
                     <tr>
                         <td><?=$no++?></td>
                         <td><?=$row['fullname_tutor']?></td>
-                        <td><?=$row['mata_pelajaran']?></td>
+                        <!-- <td><=$row['mata_pelajaran']?></td> -->
                         <td><?=$row['no_hp']?></td>
                         <td><?=$row['alamat']?></td>
                         <td><?=$row['total_pendapatan']?></td>
