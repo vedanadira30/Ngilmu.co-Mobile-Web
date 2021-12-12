@@ -1,3 +1,16 @@
+<?php
+require ("koneksi.php");
+
+session_start();
+
+if(!isset($_SESSION['id_admin'])) {
+  $_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
+  header('Location: index.php');
+
+}
+$sesID = $_SESSION['id_admin'];
+$sesName = $_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,25 +91,46 @@
             </div>
         </div>
 
-        <!-- card -->
-        <!-- <div class="cardBox">
-            <div class="card">
-                <div> -->
-                    <!--menit 32.20 -->
-                    <!-- <div class="numbers">1,504</div>  
-                    <div class="cardName">Data Siswa</div>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">1,504</div>
-                    <div class="cardName">Data Guru</div>
-                </div>
-            </div>
-        </div> -->
+        <div class="col-md-12 p-5 pt-2">
+            <h2><i class="bi bi-clock-history"></i></i> PENDAPATAN TUTOR </h2><hr>
+            <a href="pemesanan/tambahdatapemesanan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA PENDAPATAN</a>
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">NO</th>
+                  <th scope="col">NAMA TUTOR</th>
+                  <th scope="col">MATA PELAJARAN</th>
+                  <th scope="col">NO HP</th>
+                  <th scope="col">ALAMAT</th>
+                  <th scope="col">TOTAL PENDAPATAN</th>
+                  <th colspan="2" scope="col">AKSI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                 $no = 1;
+                 $query = "SELECT * FROM tbl_pendapatan
+                            INNER JOIN user_tutor ON tbl_pendapatan.id_tutor = user_tutor.id_tutor
+                            INNER JOIN tabel_mapel ON tbl_pendapatan.id_mapel = tabel_mapel.id_mapel";
+                 $result = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 
-        <!-- matkul -->
-        <!-- menit 38.50 -->
+                 while($row = mysqli_fetch_array($result)){ ?>
+                    <tr>
+                        <td><?=$no++?></td>
+                        <td><?=$row['fullname_tutor']?></td>
+                        <td><?=$row['mata_pelajaran']?></td>
+                        <td><?=$row['no_hp']?></td>
+                        <td><?=$row['alamat']?></td>
+                        <td><?=$row['total_pendapatan']?></td>
+                        <td><a href="" class="btn btn-success">Edit</a></td>
+                        <td><a href="pendapatan/deletependapatan.php?id_pendapatan=<?php echo $row['id_pendapatan']; ?>" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                <?php
+                 } ?>
+        
+              </tbody>
+            </table>
+
     </div>
 
     </div>

@@ -91,7 +91,7 @@ $sesName = $_SESSION['email'];
             </div>
         </div>
 
-        <div class="col-md-10 p-5 pt-2">
+        <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-clock-history"></i></i> RIWAYAT PEMESANAN </h2><hr>
             <!-- <a href="pemesanan/tambahdatapemesanan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH RIWAYAT PEMESANAN</a> -->
             <table class="table table-striped table-bordered">
@@ -102,6 +102,8 @@ $sesName = $_SESSION['email'];
                   <th scope="col">NAMA TUTOR</th>
                   <th scope="col">MATA PELAJARAN</th>
                   <th scope="col">TANGGAL PEMESANAN</th>
+                  <th scope="col">SESI BELAJAR</th>
+                  <th scope="col">HARGA</th>
                   <th colspan="2" scope="col">AKSI</th>
                 </tr>
               </thead>
@@ -121,6 +123,8 @@ $sesName = $_SESSION['email'];
                         <td><?=$row['fullname_tutor']?></td>
                         <td><?=$row['mata_pelajaran']?></td>
                         <td><?=$row['tgl_pemesanan']?></td>
+                        <td><?=$row['sesi_belajar']?></td>
+                        <td><?=$row['harga']?></td>
                         <!-- <td><a href="" class="btn btn-success">Edit</a></td> -->
                         <td><a href="pemesanan/deletepemesanan.php?id_pemesanan=<?php echo $row['id_pemesanan']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
