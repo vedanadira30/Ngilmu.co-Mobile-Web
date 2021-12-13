@@ -12,11 +12,12 @@ $sesName = $_SESSION['email'];
 
 if (isset($_POST['tambah'])) {
    $idtutor = $_POST['id_tutor'];
-   $mapel = $_POST['mata_pelajaran'];
-   $jenjang = $_POST['jenjang'];
-   $query = "INSERT INTO tabel_mapel VALUES ('','$idtutor','$mapel','$jenjang')";
+   $nohp = $_POST['no_hp'];
+   $alamat = $_POST['alamat'];
+   $total = $_POST['total'];
+   $query = "INSERT INTO tbl_pendapatan VALUES ('','$idtutor','$nohp','$alamat','$total')";
    $result = mysqli_query($koneksi, $query);
-   header('Location: ../datamapel.php');
+   header('Location: ../pendapatantutor.php');
 }
 ?>
 <!DOCTYPE html>
@@ -106,10 +107,10 @@ if (isset($_POST['tambah'])) {
         </div>
 
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> TAMBAH MATA PELAJARAN </h2><hr>
+            <h2><i class="bi bi-person"></i></i> TAMBAH PENDAPATAN TUTOR </h2><hr>
             <div class="row mb-5">
                         <div class="col-12">
-                            <form action="tambahmapel.php" method="post" enctype="multipart/form-data">
+                            <form action="tambahpendapatan.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Nama Tutor</label>
                                     <select name="id_tutor" id="tutor" class="form-control" required>
@@ -123,18 +124,22 @@ if (isset($_POST['tambah'])) {
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Mata Pelajaran</label>
-                                    <input type="text" class="form-control" name="mata_pelajaran" required
-                                        placeholder="mata pelajaran">
+                                    <label for="exampleFormControlInput1">NO HP</label>
+                                    <input type="text" class="form-control" name="no_hp" required
+                                        placeholder="no hp">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Jenjang</label>
-                                    <input type="text" class="form-control" name="jenjang" required
-                                        placeholder="jenjang">
+                                    <label for="exampleFormControlTextarea1">Alamat</label>
+                                    <textarea class="form-control" name="alamat" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Total Pendapatan</label>
+                                    <input type="text" class="form-control" name="total" required
+                                        placeholder="total pendapatan">
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>
-                                    <a href="../datasiswa.php">
+                                    <a href="../pendapatantutor.php">
                                         <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
                                     </a>
                                 </div>

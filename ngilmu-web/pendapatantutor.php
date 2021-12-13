@@ -99,13 +99,12 @@ $sesName = $_SESSION['email'];
 
         <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-clock-history"></i></i> PENDAPATAN TUTOR </h2><hr>
-            <a href="pemesanan/tambahdatapemesanan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA PENDAPATAN</a>
+            <a href="pendapatan/tambahpendapatan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA PENDAPATAN</a>
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
                   <th scope="col">NO</th>
                   <th scope="col">NAMA TUTOR</th>
-                  <!-- <th scope="col">MATA PELAJARAN</th> -->
                   <th scope="col">NO HP</th>
                   <th scope="col">ALAMAT</th>
                   <th scope="col">TOTAL PENDAPATAN</th>
@@ -117,18 +116,16 @@ $sesName = $_SESSION['email'];
                  $no = 1;
                  $query = "SELECT * FROM tbl_pendapatan
                             INNER JOIN user_tutor ON tbl_pendapatan.id_tutor = user_tutor.id_tutor";
-                            // INNER JOIN tabel_mapel ON tbl_pendapatan.id_mapel = tabel_mapel.id_mapel
                  $result = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 
                  while($row = mysqli_fetch_array($result)){ ?>
                     <tr>
                         <td><?=$no++?></td>
                         <td><?=$row['fullname_tutor']?></td>
-                        <!-- <td><=$row['mata_pelajaran']?></td> -->
                         <td><?=$row['no_hp']?></td>
                         <td><?=$row['alamat']?></td>
                         <td><?=$row['total_pendapatan']?></td>
-                        <td><a href="" class="btn btn-success">Edit</a></td>
+                        <td><a href="pendapatan/editpendapatan.php?id_pendapatan=<?php echo $row['id_pendapatan']; ?>" class="btn btn-success">Edit</a></td>
                         <td><a href="pendapatan/deletependapatan.php?id_pendapatan=<?php echo $row['id_pendapatan']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php

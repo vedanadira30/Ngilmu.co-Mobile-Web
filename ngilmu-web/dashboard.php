@@ -113,6 +113,7 @@ $sesName = $_SESSION['email'];
                     ?>
                         <div class="numbers"><?php echo '<h1>'.$row.'</h1>' ;?></div>  
                         <div class="cardName">Data Siswa</div>
+                        <!-- <div class="iconBx"><i class="bi bi-person"></i></div> -->
                 </div>
             </div>
             <div class="card">
@@ -124,6 +125,7 @@ $sesName = $_SESSION['email'];
                     ?>
                         <div class="numbers"><?php echo '<h1>'.$row.'</h1>' ;?></div>
                         <div class="cardName">Data Tutor</div>
+                        <!-- <div class="iconBx"><i class="bi bi-people"></i></div> -->
                 </div>
             </div>
         </div>
