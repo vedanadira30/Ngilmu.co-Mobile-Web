@@ -66,6 +66,12 @@ if (isset($_POST['tambah'])) {
                     </a>
                 </li>
                 <li>
+                    <a href="../datamapel.php">
+                        <span class="icon"><i class="bi bi-book"></i></span>
+                        <span class="title">Mata Pelajaran</span>
+                    </a>
+                </li>
+                <li>
                     <a href="../riwayatpemesanan.php">
                         <span class="icon"><i class="bi bi-clock-history"></i></span>
                         <span class="title">Riwayat Pemesanan</span>

@@ -21,7 +21,7 @@ $sesName = $_SESSION['email'];
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Data Tutor</title>
+    <title>Data Mata Pelajaran</title>
 </head>
 <body>
     <div class="container-dash">
@@ -87,7 +87,7 @@ $sesName = $_SESSION['email'];
             <!-- search -->
             <div class="search">
                 <label>
-                    <input type="search" placeholder="Search Here"> 
+                    <input type="search" placeholder="Search Here">
                     <i class="bi bi-search"></i>
                 </label>
             </div>
@@ -98,58 +98,42 @@ $sesName = $_SESSION['email'];
         </div>
 
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-people"></i></i> DATA TUTOR </h2><hr>
-            <a href="tutor/tambahdatatutor.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA TUTOR</a>
+            <h2><i class="bi bi-person"></i></i> DATA MATA PELAJARAN </h2><hr>
+            <a href="mapel/tambahmapel.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH MATA PELAJARAN</a>
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
                   <th scope="col">NO</th>
-                  <th scope="col">EMAIL</th>
-                  <th scope="col">PASSWORD</th>
-                  <th scope="col">NAMA</th>
-                  <th scope="col">INSTANSI</th>
-                  <th scope="col">NO HP</th>
-                  <th scope="col">GENDER</th>
-                  <th scope="col">ALAMAT</th>
-                  <th scope="col">TGL LAHIR</th>
+                  <th scope="col">NAMA TUTOR</th>
+                  <th scope="col">MATA PELAJARAN</th>
+                  <th scope="col">JENJANG</th>
                   <th colspan="2" scope="col">AKSI</th>
                 </tr>
               </thead>
               <tbody>
-              <?php
+                <?php
                  $no = 1;
-                 $query = "SELECT * FROM user_tutor";
+                 $query = "SELECT * FROM tabel_mapel 
+                            INNER JOIN user_tutor ON tabel_mapel.id_tutor = user_tutor.id_tutor";
                  $result = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 
-                 while($row = mysqli_fetch_array($result)){ 
-                        $id = $row['id_tutor'];
-                        $email = $row['email'];
-                        $password = $row['password'];
-                        $fullname = $row['fullname_tutor'];
-                        $instansi = $row['instansi'];
-                        $notelp = $row['no_telp'];
-                        $gender = $row['gender'];
-                        $alamat = $row['alamat'];
-                        $tgllahir = $row['tgl_lahir'];
-                    ?>
+                 while($row = mysqli_fetch_array($result)){ ?>
                     <tr>
                         <td><?=$no++?></td>
-                        <td><?php echo $email; ?></td>
-                        <td><?php echo $password; ?></td>
-                        <td><?php echo $fullname; ?></td>
-                        <td><?php echo $instansi; ?></td>
-                        <td><?php echo $notelp; ?></td>
-                        <td><?php echo $gender; ?></td>
-                        <td><?php echo $alamat; ?></td>
-                        <td><?php echo $tgllahir; ?></td>
-                        <td><a href="tutor/editdatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="tutor/deletedatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td><?=$row['fullname_tutor']?></td>
+                        <td><?=$row['mata_pelajaran']?></td>
+                        <td><?=$row['jenjang']?></td>
+                        <td><a href="mapel/editmapel.php?id_mapel=<?php echo $row['id_mapel']; ?>" class="btn btn-success">Edit</a></td>
+                        <td><a href="mapel/deletemapel.php?id_mapel=<?php echo $row['id_mapel']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>
+        
               </tbody>
             </table>
+
     </div>
+
     </div>
 
 <script>

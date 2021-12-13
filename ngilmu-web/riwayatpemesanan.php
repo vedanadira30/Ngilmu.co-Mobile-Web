@@ -52,6 +52,12 @@ $sesName = $_SESSION['email'];
                     </a>
                 </li>
                 <li>
+                    <a href="datamapel.php">
+                        <span class="icon"><i class="bi bi-book"></i></span>
+                        <span class="title">Mata Pelajaran</span>
+                    </a>
+                </li>
+                <li>
                     <a href="riwayatpemesanan.php">
                         <span class="icon"><i class="bi bi-clock-history"></i></span>
                         <span class="title">Riwayat Pemesanan</span>
@@ -93,7 +99,7 @@ $sesName = $_SESSION['email'];
 
         <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-clock-history"></i></i> RIWAYAT PEMESANAN </h2><hr>
-            <!-- <a href="pemesanan/tambahdatapemesanan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH RIWAYAT PEMESANAN</a> -->
+            <a href="pemesanan/tambahdatapemesanan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH RIWAYAT PEMESANAN</a>
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
