@@ -11,31 +11,24 @@ $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];  
 
 if (isset($_POST['update'])) {
-//    $id = $_POST['id_user'];
-   $email = $_POST['email'];
-   $password = $_POST['password'];
-   $fullname = $_POST['fullname'];
-   $grade = $_POST['grade'];
-   $gender = $_POST['gender'];
-   $alamat = $_POST['alamat'];
-   $query = "UPDATE user_detail SET password='$password', fullname='$fullname',
-            grade='$grade', gender='$gender', alamat='$alamat' where email='$email'";
+//    $id = $_POST['id_tutor'];
+    $idtutor = $_POST['id_tutor'];
+    $mapel = $_POST['mata_pelajaran'];
+    $jenjang = $_POST['jenjang'];
+   $query = "UPDATE tabel_mapel VALUES ('','$idtutor','$mapel','$jenjang')";
    $result = mysqli_query($koneksi, $query);
-   header('Location: ../datasiswa.php');
+   header('Location: ../datamapel.php');
 }
 
-    $id = $_GET['id_user'];
-    $query = "SELECT * FROM user_detail WHERE id_user='$id'";
+    $id_mapel = $_GET['id_mapel'];
+    $query = "SELECT * FROM tabel_mapel WHERE id_mapel='$id_mapel'";
     $result = mysqli_query($koneksi, $query) or die (mysql_error());
     $no = 1;
     while ($row = mysqli_fetch_array($result)){
-        $iduser = $row['id_user'];
-        $email = $row['email'];
-        $password = $row['password'];
-        $fullname = $row['fullname'];
-        $grade = $row['grade'];
-        $gender = $row['gender'];
-        $alamat = $row['alamat'];
+        $idtutor = $row['id_tutor'];
+        $mapel = $row['mata_pelajaran'];
+        $jenjang = $row['jenjang'];
+
     }
 ?>
 <!DOCTYPE html>
@@ -48,7 +41,7 @@ if (isset($_POST['update'])) {
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Data Siswa</title>
+    <title>Data Mapel</title>
 </head>
 <body>
     <div class="container-dash">
@@ -125,44 +118,29 @@ if (isset($_POST['update'])) {
         </div>
 
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> EDIT DATA SISWA </h2><hr>
-            <!-- <a href="siswa/tambahdatasiswa.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
+            <h2><i class="bi bi-person"></i></i> EDIT DATA MAPEL </h2><hr>
+            <!-- <a href="siswa/editdatamapel.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
             <div class="col-12">
                 <form id="form_validation" method="POST">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" value="<?php echo $email;?>" required>
+                                    <label class="form-label">ID Tutor</label>
+                                    <input type="email" class="form-control" name="id_tutor" value="<?php echo $idtutor;?>" required>
                                 </div>
                             </div>
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <label class="form-label">Password</label>
-                                    <input type="text" class="form-control" name="password" value="<?php echo $password;?>" required>
+                                    <label class="form-label">Mapel</label>
+                                    <input type="text" class="form-control" name="mata_pelajaran" value="<?php echo $mapel;?>" required>
                                 </div>
                             </div>
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <label class="form-label">Fullname</label>
-                                    <input type="text" class="form-control" name="fullname" value="<?php echo $fullname;?>" required>
+                                    <label class="form-label">Jenjang</label>
+                                    <input type="text" class="form-control" name="jenjang" value="<?php echo $jenjang;?>" required>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Grade</label>
-                                <input type="text" class="form-control" name="grade" value="<?php echo $grade; ?>">
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <label class="form-label">Gender</label>
-                                    <input type="text" class="form-control" name="gender" value="<?php echo $gender;?>" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Alamat</label>
-                                <textarea class="form-control" name="alamat" rows="3"><?= $alamat; ?></textarea>
-                            </div>
                             <button class="btn btn-primary" type="submit" name="update">Simpan Perubahan</button>
-                            <a href="../datasiswa.php">
+                            <a href="../datamapel.php">
                                 <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
                             </a>
                         </form>
