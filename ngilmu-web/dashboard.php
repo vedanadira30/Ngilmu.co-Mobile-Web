@@ -106,14 +106,15 @@ $sesName = $_SESSION['email'];
         <div class="cardBox">
             <div class="card">
                 <div>
-                    <?php 
+                     <?php
                         $query = "SELECT * FROM user_detail ORDER BY id_user";
                         $result = mysqli_query($koneksi, $query);
                         $row = mysqli_num_rows($result);
                     ?>
-                        <div class="numbers"><?php echo '<h1>'.$row.'</h1>' ;?></div>  
+                        <div class="numbers">
+                            <?php echo '<h1>'.$row.'</h1>';?>
+                        </div>  
                         <div class="cardName">Data Siswa</div>
-                        <!-- <div class="iconBx"><i class="bi bi-person"></i></div> -->
                 </div>
             </div>
             <div class="card">
@@ -123,11 +124,26 @@ $sesName = $_SESSION['email'];
                         $result = mysqli_query($koneksi, $query);
                         $row = mysqli_num_rows($result);
                     ?>
-                        <div class="numbers"><?php echo '<h1>'.$row.'</h1>' ;?></div>
+                        <div class="numbers">
+                            <?php echo '<h1>'.$row.'</h1>';?>
+                        </div>
                         <div class="cardName">Data Tutor</div>
-                        <!-- <div class="iconBx"><i class="bi bi-people"></i></div> -->
                 </div>
             </div>
+            <div class="card">
+                <div>
+                    <?php 
+                        $query = "SELECT * FROM tabel_mapel ORDER BY id_mapel";
+                        $result = mysqli_query($koneksi, $query);
+                        $row = mysqli_num_rows($result);
+                    ?>
+                        <div class="numbers">
+                            <?php echo '<h1>'.$row.'</h1>';?>
+                        </div>
+                        <div class="cardName">Mata Pelajaran</div>
+                </div>
+            </div>
+
         </div>
 
     </div>

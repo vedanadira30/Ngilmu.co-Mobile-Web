@@ -155,11 +155,6 @@ img {
     text-decoration: none;
 }
 
-/* #f5f8ff
-
-#eff2f9 */
-
-
 /* Dashboard */
 .container-dash{
     position: relative;
@@ -362,11 +357,11 @@ img {
 
 .cardBox{
     position: relative;
-    width: 50%;
+    width: 75%;
     padding: 20px;
-    margin-left: 260px;
+    margin-left: 150px;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 30px;
 }
 
