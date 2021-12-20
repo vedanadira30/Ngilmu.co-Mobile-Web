@@ -124,7 +124,7 @@ $sesName = $_SESSION['email'];
                         <td><?=$row['mata_pelajaran']?></td>
                         <td><?=$row['jenjang']?></td>
                         <td><a href="mapel/editmapel.php?id_mapel=<?php echo $row['id_mapel']; ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="mapel/deletemapel.php?id_mapel=<?php echo $row['id_mapel']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="mapel/deletemapel.php?id_mapel=<?=$row['id_mapel']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Hapus</a></td>
                     </tr>
                 <?php
                  } ?>

@@ -143,7 +143,7 @@ $sesName = $_SESSION['email'];
                         <td><?php echo $alamat; ?></td>
                         <td><?php echo $tgllahir; ?></td>
                         <td><a href="tutor/editdatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="tutor/deletedatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="tutor/deletedatatutor.php?id_tutor=<?=$row['id_tutor']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Hapus</a></td>
                     </tr>
                 <?php
                  } ?>
