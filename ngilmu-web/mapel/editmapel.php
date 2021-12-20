@@ -125,7 +125,7 @@ if (isset($_POST['update'])) {
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <label class="form-label">ID Tutor</label>
-                                    <input type="email" class="form-control" name="id_tutor" value="<?php echo $idtutor;?>" required>
+                                    <input type="text" class="form-control" name="id_tutor" value="<?php echo $idtutor;?>" required>
                                 </div>
                             </div>
                             <div class="form-group form-float">
