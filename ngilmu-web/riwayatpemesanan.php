@@ -139,7 +139,7 @@ $sesName = $_SESSION['email'];
                         <td><?=$row['sesi_belajar']?></td>
                         <td><?=$row['harga']?></td>
                         <!-- <td><a href="" class="btn btn-success">Edit</a></td> -->
-                        <td><a href="pemesanan/deletepemesanan.php?id_pemesanan=<?php echo $row['id_pemesanan']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="pemesanan/deletepemesanan.php?id_pemesanan=<?php echo $row['id_pemesanan']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>

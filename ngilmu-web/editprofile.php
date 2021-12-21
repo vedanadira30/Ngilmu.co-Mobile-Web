@@ -11,14 +11,14 @@ $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];  
 
 if (isset($_POST['update'])) {
-//    $idadmin = $_POST['id_admin'];
-   $email = $_POST['email'];
-   $password = $_POST['password'];
-   $fullname = $_POST['nama_lengkap'];
-     $query = "UPDATE user_detail SET password='$password', nama_lengkap='$fullname',
-            where email='$email'";
-   $result = mysqli_query($koneksi, $query);
-   header('Location: dashboard.php');
+    // $idadmin = $_POST['id_admin'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $fullname = $_POST['nama_lengkap'];
+    $query = "UPDATE user_admin SET password='$password', nama_lengkap='$fullname'
+             where email='$email'";
+    $result = mysqli_query($koneksi, $query);
+    header('Location: dashboard.php');
 }
 
     $id = $_GET['id_admin'];
@@ -42,7 +42,7 @@ if (isset($_POST['update'])) {
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Data Admin</title>
+    <title>Data Siswa</title>
 </head>
 <body>
     <div class="container-dash">
@@ -113,11 +113,10 @@ if (isset($_POST['update'])) {
             <!-- Profile -->
             </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="editprofile.php?id_admin=<?php echo $_SESSION['id_admin']; ?>">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin mau logout ?')">Logout</a></li>
                 </ul>
-
             </div>
             <!-- userImg -->
             <div class="user">
@@ -126,7 +125,7 @@ if (isset($_POST['update'])) {
         </div>
 
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> EDIT DATA ADMIN </h2><hr>
+            <h2><i class="bi bi-person"></i></i> EDIT PROFILE </h2><hr>
             <!-- <a href="siswa/tambahdatasiswa.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
             <div class="col-12">
                 <form id="form_validation" method="POST">

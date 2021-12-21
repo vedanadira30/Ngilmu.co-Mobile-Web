@@ -80,12 +80,12 @@ $sesName = $_SESSION['email'];
                 <i class="bi bi-list"></i>
             </div>
             <!-- search -->
-            <div class="search">
+            <!-- <div class="search">
                 <label>
                     <input type="search" placeholder="Search Here">
                     <i class="bi bi-search"></i>
                 </label>
-            </div>
+            </div> -->
             <!-- dropdown -->
             <div class="dropdown">
             <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -95,7 +95,7 @@ $sesName = $_SESSION['email'];
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <li><a class="dropdown-item" href="editprofile.php?id_admin=<?php echo $_SESSION['id_admin']; ?>">Edit Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin mau logout ?')">Logout</a></li>
+                    <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin akan logout ?')">Logout</a></li>
                 </ul>
 
             </div>

@@ -133,7 +133,7 @@ $sesName = $_SESSION['email'];
                         <td><?=$row['alamat']?></td>
                         <td><?=$row['total_pendapatan']?></td>
                         <td><a href="pendapatan/editpendapatan.php?id_pendapatan=<?php echo $row['id_pendapatan']; ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="pendapatan/deletependapatan.php?id_pendapatan=<?php echo $row['id_pendapatan']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="pendapatan/deletependapatan.php?id_pendapatan=<?php echo $row['id_pendapatan']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>
