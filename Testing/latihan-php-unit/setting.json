@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "terminal.integrated.profiles.windows":{
+        "Bash": {
+            "path": "C\\Users\\Git\\bin\\bash.exe",
+            "args": ["-1"]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Bash"
+}
