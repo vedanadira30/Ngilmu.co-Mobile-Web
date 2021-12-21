@@ -10,14 +10,37 @@ if(!isset($_SESSION['id_admin'])) {
 $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];  
 
-if (isset($_POST['tambah'])) {
-   $idtutor = $_POST['id_tutor'];
-   $mapel = $_POST['mata_pelajaran'];
-   $jenjang = $_POST['jenjang'];
-   $query = "INSERT INTO tabel_mapel VALUES ('','$idtutor','$mapel','$jenjang')";
+if (isset($_POST['update'])) {
+//    $id = $_POST['id_tutor'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $fullname = $_POST['fullname_tutor'];
+    $instansi = $_POST['instansi'];
+    $notelp = $_POST['no_telp'];
+    $gender = $_POST['gender'];
+    $alamat = $_POST['alamat'];
+    $tgllahir = $_POST['tgl_lahir'];
+   $query = "UPDATE user_tutor SET password='$password', fullname_tutor='$fullname',
+            instansi='$instansi',no_telp='$notelp', gender='$gender', alamat='$alamat', tgl_lahir='$tgllahir' where email='$email'";
    $result = mysqli_query($koneksi, $query);
-   header('Location: ../datamapel.php');
+   header('Location: ../datatutor.php');
 }
+
+    $id = $_GET['id_tutor'];
+    $query = "SELECT * FROM user_tutor WHERE id_tutor='$id'";
+    $result = mysqli_query($koneksi, $query) or die (mysql_error());
+    $no = 1;
+    while ($row = mysqli_fetch_array($result)){
+        $idtutor = $row['id_tutor'];
+        $email = $row['email'];
+        $password = $row['password'];
+        $fullname = $row['fullname_tutor'];
+        $instansi = $row['instansi'];
+        $notelp = $row['no_telp'];
+        $gender = $row['gender'];
+        $alamat = $row['alamat'];
+        $tgllahir = $row['tgl_lahir'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +52,7 @@ if (isset($_POST['tambah'])) {
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Tambah Mata Pelajaran</title>
+    <title>Data Tutor</title>
 </head>
 <body>
     <div class="container-dash">
@@ -112,41 +135,61 @@ if (isset($_POST['tambah'])) {
         </div>
 
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> TAMBAH MATA PELAJARAN </h2><hr>
-            <div class="row mb-5">
-                        <div class="col-12">
-                            <form action="tambahmapel.php" method="post" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Nama Tutor</label>
-                                    <select name="id_tutor" id="tutor" class="form-control" required>
-                                        <option value=""> Pilih Tutor </option>
-                                        <?php
-                                            $result = mysqli_query($koneksi, "SELECT * FROM user_tutor") or die (mysqli_error($koneksi));
-                                            while($row = mysqli_fetch_array($result)){
-                                                echo '<option value="'.$row['id_tutor'].'">'.$row['fullname_tutor'].'</option>';
-                                            }
-                                        ?>
-                                    </select>
+            <h2><i class="bi bi-person"></i></i> EDIT DATA TUTOR </h2><hr>
+            <!-- <a href="tutor/updatedatatutor.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
+            <div class="col-12">
+                <form id="form_validation" method="POST">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" value="<?php echo $email;?>" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Mata Pelajaran</label>
-                                    <input type="text" class="form-control" name="mata_pelajaran" required
-                                        placeholder="mata pelajaran">
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <label class="form-label">Password</label>
+                                    <input type="text" class="form-control" name="password" value="<?php echo $password;?>" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Jenjang</label>
-                                    <input type="text" class="form-control" name="jenjang" required
-                                        placeholder="jenjang">
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <label class="form-label">Fullname</label>
+                                    <input type="text" class="form-control" name="fullname_tutor" value="<?php echo $fullname;?>" required>
                                 </div>
-                                <div class="form-group">
-                                    <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>
-                                    <a href="../datamapel.php">
-                                        <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
-                                    </a>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <label class="form-label">Instansi</label>
+                                    <input type="text" class="form-control" name="instansi" value="<?php echo $instansi;?>" required>
                                 </div>
-                            </form>
-                        </div>
-              </tbody>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">No HP</label>
+                                <input type="text" class="form-control" name="no_telp" value="<?php echo $notelp; ?>" required>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <label class="form-label">Gender</label>
+                                    <input type="text" class="form-control" name="gender" value="<?php echo $gender;?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Alamat</label>
+                                <textarea class="form-control" name="alamat" rows="3"><?= $alamat; ?></textarea>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <label class="form-label">Tanggal Lahir</label>
+                                    <input type="date" class="form-control" name="tgl_lahir" value="<?php echo $tgllahir;?>" required>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit" name="update">Simpan Perubahan</button>
+                            <a href="../datatutor.php">
+                                <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
+                            </a>
+                        </form>
+                    </div>
+                  </tbody>
             </table>
 
     </div>

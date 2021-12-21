@@ -69,12 +69,6 @@ $sesName = $_SESSION['email'];
                         <span class="title">Pendapatan Tutor</span>
                     </a>
                 </li>
-                <li>
-                    <a href="index.php">
-                        <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
-                        <span class="title">Log Out</span>
-                    </a>
-                </li>
             </ul>
         </div>
 
@@ -90,6 +84,18 @@ $sesName = $_SESSION['email'];
                     <input type="search" placeholder="Search Here"> 
                     <i class="bi bi-search"></i>
                 </label>
+            </div>
+            <!-- dropdown -->
+            <div class="dropdown">
+            <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <?php echo $_SESSION['email'] ?>   
+            <!-- Profile -->
+            </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin mau logout ?')">Logout</a></li>
+                </ul>
             </div>
             <!-- userImg -->
             <div class="user">

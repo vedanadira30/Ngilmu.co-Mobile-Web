@@ -70,12 +70,12 @@ $sesName = $_SESSION['email'];
                         <span class="title">Pendapatan Tutor</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="index.php">
                         <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
                         <span class="title">Log Out</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
 
@@ -92,16 +92,25 @@ $sesName = $_SESSION['email'];
                     <i class="bi bi-search"></i>
                 </label>
             </div>
-            <!-- Name -->
-            <!-- <div class="nama">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> //php echo $sesName; ?></span>
-            </div> -->
+            <!-- dropdown -->
+            <div class="dropdown">
+            <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <?php echo $_SESSION['email'] ?>   
+            <!-- Profile -->
+            </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin mau logout ?')">Logout</a></li>
+                </ul>
+
+            </div>
             <!-- userImg -->
             <div class="user">
                 <img src="images/img1.jpg">
             </div>
         </div>
-
+        
         <!-- card -->
         <div class="cardBox">
             <div class="card">
@@ -144,8 +153,6 @@ $sesName = $_SESSION['email'];
                 </div>
             </div>
         </div>
-
-        <!-- slider dahsboard -->
         <div class="box-dash">
             <div id="carouselExampleIndicators" class="carousel2 slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">

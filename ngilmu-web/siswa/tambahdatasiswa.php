@@ -11,12 +11,15 @@ $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];  
 
 if (isset($_POST['tambah'])) {
-   $idtutor = $_POST['id_tutor'];
-   $mapel = $_POST['mata_pelajaran'];
-   $jenjang = $_POST['jenjang'];
-   $query = "INSERT INTO tabel_mapel VALUES ('','$idtutor','$mapel','$jenjang')";
+   $email = $_POST['email'];
+   $password = $_POST['password'];
+   $fullname = $_POST['fullname'];
+   $grade = $_POST['grade'];
+   $gender = $_POST['gender'];
+   $alamat = $_POST['alamat'];
+   $query = "INSERT INTO user_detail VALUES ('','$email','$password','$fullname','$grade','$gender','$alamat')";
    $result = mysqli_query($koneksi, $query);
-   header('Location: ../datamapel.php');
+   header('Location: ../datasiswa.php');
 }
 ?>
 <!DOCTYPE html>
@@ -29,7 +32,7 @@ if (isset($_POST['tambah'])) {
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Tambah Mata Pelajaran</title>
+    <title>Tambah Data Siswa</title>
 </head>
 <body>
     <div class="container-dash">
@@ -112,35 +115,42 @@ if (isset($_POST['tambah'])) {
         </div>
 
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> TAMBAH MATA PELAJARAN </h2><hr>
+            <h2><i class="bi bi-person"></i></i> TAMBAH DATA SISWA </h2><hr>
             <div class="row mb-5">
                         <div class="col-12">
-                            <form action="tambahmapel.php" method="post" enctype="multipart/form-data">
+                            <form action="tambahdatasiswa.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Nama Tutor</label>
-                                    <select name="id_tutor" id="tutor" class="form-control" required>
-                                        <option value=""> Pilih Tutor </option>
-                                        <?php
-                                            $result = mysqli_query($koneksi, "SELECT * FROM user_tutor") or die (mysqli_error($koneksi));
-                                            while($row = mysqli_fetch_array($result)){
-                                                echo '<option value="'.$row['id_tutor'].'">'.$row['fullname_tutor'].'</option>';
-                                            }
-                                        ?>
-                                    </select>
+                                    <label for="exampleFormControlInput1">Email</label>
+                                    <input type="email" class="form-control" name="email" required
+                                        placeholder="email">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Mata Pelajaran</label>
-                                    <input type="text" class="form-control" name="mata_pelajaran" required
-                                        placeholder="mata pelajaran">
+                                    <label for="exampleFormControlInput1">Password</label>
+                                    <input type="text" class="form-control" name="password" required
+                                        placeholder="password">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Jenjang</label>
-                                    <input type="text" class="form-control" name="jenjang" required
-                                        placeholder="jenjang">
+                                    <label for="exampleFormControlInput1">Fullname</label>
+                                    <input type="text" class="form-control" name="fullname" required
+                                        placeholder="fullname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Grade</label>
+                                    <input type="text" class="form-control" name="grade" required
+                                        placeholder="grade">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Gender</label>
+                                    <input type="text" class="form-control" name="gender" required
+                                        placeholder="gender">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Alamat</label>
+                                    <textarea class="form-control" name="alamat" rows="3" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>
-                                    <a href="../datamapel.php">
+                                    <a href="../datasiswa.php">
                                         <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
                                     </a>
                                 </div>
