@@ -69,6 +69,12 @@ $sesName = $_SESSION['email'];
                         <span class="title">Pendapatan Tutor</span>
                     </a>
                 </li>
+                <!-- <li>
+                    <a href="index.php">
+                        <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
+                        <span class="title">Log Out</span>
+                    </a>
+                </li> -->
             </ul>
         </div>
 
@@ -87,6 +93,16 @@ $sesName = $_SESSION['email'];
             </div>
             <!-- dropdown -->
             <div class="dropdown">
+                <!-- <ul>
+                    <li><a href="#"><i class="bi bi-caret-down-fill"></i></a>
+                        <ul>
+                            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+
             <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?php echo $_SESSION['email'] ?>   
             <!-- Profile -->
@@ -96,6 +112,7 @@ $sesName = $_SESSION['email'];
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin mau logout ?')">Logout</a></li>
                 </ul>
+
             </div>
             <!-- userImg -->
             <div class="user">
@@ -149,7 +166,7 @@ $sesName = $_SESSION['email'];
                         <td><?php echo $alamat; ?></td>
                         <td><?php echo $tgllahir; ?></td>
                         <td><a href="tutor/editdatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="tutor/deletedatatutor.php?id_tutor=<?=$row['id_tutor']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Hapus</a></td>
+                        <td><a href="tutor/deletedatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php
                  } ?>

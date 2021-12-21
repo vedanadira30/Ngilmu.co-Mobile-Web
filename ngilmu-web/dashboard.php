@@ -94,12 +94,22 @@ $sesName = $_SESSION['email'];
             </div>
             <!-- dropdown -->
             <div class="dropdown">
+                <!-- <ul>
+                    <li><a href="#"><i class="bi bi-caret-down-fill"></i></a>
+                        <ul>
+                            <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+
             <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?php echo $_SESSION['email'] ?>   
             <!-- Profile -->
             </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="editprofile.php?id_admin=<?php echo $_SESSION['id_admin']; ?>">Edit Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin mau logout ?')">Logout</a></li>
                 </ul>
