@@ -148,28 +148,27 @@ $sesName = $_SESSION['email'];
                 </div>
             </div>
         </div>
-        <div class="box-dash">
-        <div id="carouselExampleFade" class="carousel2 slide" data-bs-ride="carousel2">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 1000px">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
                 <img src="images/dashboard1.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
+                </div>
+                <div class="carousel-item">
                 <img src="images/dashboard2.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
+                </div>
+                <div class="carousel-item">
                 <img src="images/dashboard4.jpg" class="d-block w-100">
+                </div>
             </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-        </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
         </div>
     </div>
 
