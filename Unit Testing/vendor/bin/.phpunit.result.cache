@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Test_login::testLoginPost":3,"loginTest::testLogin":4,"Warning":6,"loginTest::testlogin":4},"times":{"SimpleTest::testCountWords":0.035,"Test_login::testLoginPost":0.434,"loginTest::testLogin":0.73,"Warning":0.048,"loginTest::testlogin":0.055}}
