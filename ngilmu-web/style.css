@@ -320,52 +320,6 @@ img {
     margin-left: 160px;
 }
 
-/* .dropdown ul{
-    padding: 0;
-    margin: 0;
-    float: right;
-    margin-right: 5px;
-}
-
-.dropdown ul li{
-    list-style: none;
-    display: inline-block;
-}
-
-.dropdown ul li a{
-    display: block;
-    padding: 0 15px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
-    color: #722B90;
-    line-height: 20px;
-}
-
-.dropdown ul li a:hover{
-    background: #722B90;
-    color: #fff;
-}
-
-.dropdown ul ul{
-    position: absolute;
-    top: 60px;
-    display: none;
-}
-
-.dropdown ul li:hover ul{
-    display: block;
-}
-
-.dropdown ul ul li{
-    width: 150px;
-    float: none;
-    display: list-item;
-    position: relative;
-} */
-
-/* .dropdown-menu{
-    display: block;
-} */
-
 .search label{
     position: relative;
     width: 100%;

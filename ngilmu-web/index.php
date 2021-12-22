@@ -24,6 +24,8 @@ if(isset($_POST['submit'])){
                 // header('Location: dashboard.php?email=' . urlencode($userVal));
                 $_SESSION['id_admin'] = $id;
                 $_SESSION['email'] = $userVal;
+                $_SESSION['password'] = $passVal;
+                $_SESSION['nama_lengkap'] = $uName;
                 header('Location: dashboard.php');
             }else{
                 $error = 'user atau password salah!';

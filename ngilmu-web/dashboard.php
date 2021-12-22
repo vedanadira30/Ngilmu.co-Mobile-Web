@@ -80,23 +80,24 @@ $sesName = $_SESSION['email'];
                 <i class="bi bi-list"></i>
             </div>
             <!-- search -->
-            <!-- <div class="search">
+            <div class="search">
                 <label>
                     <input type="search" placeholder="Search Here">
                     <i class="bi bi-search"></i>
                 </label>
-            </div> -->
-            <!-- dropdown -->
-            <div class="dropdown">
-            <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?php echo $_SESSION['email'] ?>   
+            </div>
             <!-- Profile -->
-            </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="editprofile.php?id_admin=<?php echo $_SESSION['id_admin']; ?>">Edit Profile</a></li>
+            <div class="dropdown">
+                <a href="profile.php" class="btn btn-sm "><?php echo $_SESSION['email'] ?></a>
+            <!-- <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+           
+            </button>    -->
+            <!-- dropdown -->
+                <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="editprofile.php?id_admin=<php echo $_SESSION['id_admin']; ?>">Edit Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin akan logout ?')">Logout</a></li>
-                </ul>
+                </ul> -->
 
             </div>
             <!-- userImg -->
@@ -147,34 +148,29 @@ $sesName = $_SESSION['email'];
                 </div>
             </div>
         </div>
-        <div class="box-dash">
-            <div id="carouselExampleIndicators" class="carousel2 slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/dashboard1.jpg" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/dashboard2.jpg" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/dashboard4.jpg" class="d-block w-100">
-                </div>
+        <!-- <div class="box-dash">
+        <div id="carouselExampleFade" class="carousel2 slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/dashboard1.jpg" class="d-block w-100">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-item">
+                <img src="images/dashboard2.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="images/dashboard4.jpg" class="d-block w-100">
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+        </div> -->
     </div>
 
 </div>

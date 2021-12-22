@@ -18,7 +18,7 @@ if (isset($_POST['update'])) {
     $query = "UPDATE user_admin SET password='$password', nama_lengkap='$fullname'
              where email='$email'";
     $result = mysqli_query($koneksi, $query);
-    header('Location: dashboard.php');
+    header('Location: profile.php');
 }
 
     $id = $_GET['id_admin'];
@@ -108,15 +108,7 @@ if (isset($_POST['update'])) {
             </div>
             <!-- dropdown -->
             <div class="dropdown">
-            <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?php echo $_SESSION['email'] ?>   
-            <!-- Profile -->
-            </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin mau logout ?')">Logout</a></li>
-                </ul>
+            <a href="profile.php" class="btn btn-sm"><?php echo $_SESSION['email'] ?></a>
             </div>
             <!-- userImg -->
             <div class="user">
@@ -148,7 +140,7 @@ if (isset($_POST['update'])) {
                                 </div>
                             </div>
                             <button class="btn btn-primary" type="submit" name="update">Simpan Perubahan</button>
-                            <a href="dashboard.php">
+                            <a href="profile.php">
                                 <button class="btn btn-danger" type="button" name="kembali">Kembali</button>
                             </a>
                         </form>

@@ -95,15 +95,7 @@ if (isset($_POST['tambah'])) {
             </div>
             <!-- dropdown -->
             <div class="dropdown">
-            <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?php echo $_SESSION['email'] ?>   
-            <!-- Profile -->
-            </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin mau logout ?')">Logout</a></li>
-                </ul>
+            <a href="profile.php" class="btn btn-sm"><?php echo $_SESSION['email'] ?></a>
             </div>
             <!-- userImg -->
             <div class="user">
