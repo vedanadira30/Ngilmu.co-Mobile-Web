@@ -148,8 +148,8 @@ $sesName = $_SESSION['email'];
                 </div>
             </div>
         </div>
-        <!-- <div class="box-dash">
-        <div id="carouselExampleFade" class="carousel2 slide" data-bs-ride="carousel">
+        <div class="box-dash">
+        <div id="carouselExampleFade" class="carousel2 slide" data-bs-ride="carousel2">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="images/dashboard1.jpg" class="d-block w-100">
@@ -170,7 +170,7 @@ $sesName = $_SESSION['email'];
             <span class="visually-hidden">Next</span>
         </button>
         </div>
-        </div> -->
+        </div>
     </div>
 
 </div>
