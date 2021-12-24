@@ -95,6 +95,7 @@ $sesName = $_SESSION['email'];
             </div>
         </div>
 
+        <!-- menampilkan data riwayat pemesanan -->
         <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-clock-history"></i></i> RIWAYAT PEMESANAN </h2><hr>
             <!-- <a href="pemesanan/tambahdatapemesanan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH RIWAYAT PEMESANAN</a> -->
@@ -137,8 +138,6 @@ $sesName = $_SESSION['email'];
         
               </tbody>
             </table>
-
-        <!-- https://www.youtube.com/watch?v=ppTLhnJJiGc -->
 
     </div>
 

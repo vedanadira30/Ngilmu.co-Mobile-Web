@@ -160,9 +160,7 @@ $sesName = $_SESSION['email'];
                         <td><?php echo $alamat; ?></td>
                         <td><a href="siswa/editdatasiswa.php?id_user=<?php echo $row['id_user']; ?>" class="btn btn-success">Edit</a></td>
                         <td><a href="siswa/deletedatasiswa.php?id_user=<?=$row['id_user']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Hapus</a></td>
-                        <!-- <td><button type="button" class="btn btn-danger deletebtn">Delete</button></td> -->
-                        <!-- <td><a href="siswa/deletedatasiswa.php?id_user=<php echo $row['id_user']; ?>" class="btn btn-danger">Delete</a></td> -->
-                    </tr>
+                       </tr>
                 <?php
                  } ?>
               </tbody>
@@ -176,12 +174,6 @@ $sesName = $_SESSION['email'];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-    $('#datatableid').DataTable();
-} );
-</script>
 
 <script>
     //modal delete

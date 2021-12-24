@@ -104,8 +104,9 @@ if (isset($_POST['tambah'])) {
             </div>
         </div>
 
+        <!-- form tambah data pendapatan tutor -->
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> TAMBAH PENDAPATAN TUTOR </h2><hr>
+            <h2><i class="bi bi-wallet2"></i></i> TAMBAH PENDAPATAN TUTOR </h2><hr>
             <div class="row mb-5">
                         <div class="col-12">
                             <form action="tambahpendapatan.php" method="post" enctype="multipart/form-data">
@@ -123,7 +124,7 @@ if (isset($_POST['tambah'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">NO HP</label>
-                                    <input type="text" class="form-control" name="no_hp" required
+                                    <input type="number" class="form-control" name="no_hp" required
                                         placeholder="no hp">
                                 </div>
                                 <div class="form-group">

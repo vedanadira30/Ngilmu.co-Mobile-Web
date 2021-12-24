@@ -116,6 +116,7 @@ if (isset($_POST['update'])) {
             </div>
         </div>
 
+        <!-- menampilkan edit profile admin -->
         <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-person"></i></i> EDIT PROFILE </h2><hr>
             <!-- <a href="siswa/tambahdatasiswa.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->

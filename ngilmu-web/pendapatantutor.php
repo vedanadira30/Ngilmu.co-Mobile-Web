@@ -95,8 +95,9 @@ $sesName = $_SESSION['email'];
             </div>
         </div>
 
+        <!-- menampilkan data pendapatan tutor -->
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-clock-history"></i></i> PENDAPATAN TUTOR </h2><hr>
+            <h2><i class="bi bi-wallet2"></i></i> PENDAPATAN TUTOR </h2><hr>
             <a href="pendapatan/tambahpendapatan.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA PENDAPATAN</a>
             <table class="table table-striped table-bordered">
               <thead>

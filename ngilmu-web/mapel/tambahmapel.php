@@ -103,8 +103,9 @@ if (isset($_POST['tambah'])) {
             </div>
         </div>
 
+        <!-- form tambah data mapel -->
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> TAMBAH MATA PELAJARAN </h2><hr>
+            <h2><i class="bi bi-book"></i></i> TAMBAH MATA PELAJARAN </h2><hr>
             <div class="row mb-5">
                         <div class="col-12">
                             <form action="tambahmapel.php" method="post" enctype="multipart/form-data">

@@ -1,6 +1,5 @@
 <?php
 require ("koneksi.php");
-//$email = $_GET['user_fullname'];
 
 session_start();
 
@@ -89,16 +88,6 @@ $sesName = $_SESSION['email'];
             <!-- Profile -->
             <div class="dropdown">
                 <a href="profile.php" class="btn btn-sm "><?php echo $_SESSION['email'] ?></a>
-            <!-- <button class="dropdown-toggle btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-           
-            </button>    -->
-            <!-- dropdown -->
-                <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="editprofile.php?id_admin=<php echo $_SESSION['id_admin']; ?>">Edit Profile</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="logout.php" onclick="return confirm('Anda yakin akan logout ?')">Logout</a></li>
-                </ul> -->
-
             </div>
             <!-- userImg -->
             <div class="user">
@@ -148,6 +137,7 @@ $sesName = $_SESSION['email'];
                 </div>
             </div>
         </div>
+        <!-- carousel / slider -->
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 1000px">
             <div class="carousel-inner">
                 <div class="carousel-item active">

@@ -116,9 +116,9 @@ if (isset($_POST['update'])) {
             </div>
         </div>
 
+        <!-- form edit data pendapatan tutor -->
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> EDIT PENDAPATAN TUTOR </h2><hr>
-            <!-- <a href="tutor/updatedatatutor.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA SISWA</a> -->
+            <h2><i class="bi bi-wallet2"></i></i> EDIT PENDAPATAN TUTOR </h2><hr>
             <div class="col-12">
                 <form id="form_validation" method="POST">
                             <div class="form-group form-float">
@@ -129,7 +129,7 @@ if (isset($_POST['update'])) {
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">No HP</label>
-                                <input type="text" class="form-control" name="no_hp" value="<?php echo $nohp; ?>" required>
+                                <input type="number" class="form-control" name="no_hp" value="<?php echo $nohp; ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Alamat</label>

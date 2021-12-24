@@ -95,8 +95,9 @@ $sesName = $_SESSION['email'];
             </div>
         </div>
 
+        <!-- menampilkan data mapel -->
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> DATA MATA PELAJARAN </h2><hr>
+            <h2><i class="bi bi-book"></i></i> DATA MATA PELAJARAN </h2><hr>
             <a href="mapel/tambahmapel.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH MATA PELAJARAN</a>
             <table class="table table-striped table-bordered">
               <thead>

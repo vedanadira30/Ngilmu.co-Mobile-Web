@@ -109,8 +109,9 @@ if (isset($_POST['tambah'])) {
             </div>
         </div>
 
+        <!-- form tambah data tutor -->
         <div class="col-md-12 p-5 pt-2">
-            <h2><i class="bi bi-person"></i></i> TAMBAH DATA TUTOR </h2><hr>
+            <h2><i class="bi bi-people"></i></i> TAMBAH DATA TUTOR </h2><hr>
             <div class="row mb-5">
                         <div class="col-12">
                             <form action="tambahdatatutor.php" method="post" enctype="multipart/form-data">
@@ -136,7 +137,7 @@ if (isset($_POST['tambah'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">No HP</label>
-                                    <input type="text" class="form-control" name="no_telp" required
+                                    <input type="number" class="form-control" name="no_telp" required
                                         placeholder="no telp">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Gender</label>

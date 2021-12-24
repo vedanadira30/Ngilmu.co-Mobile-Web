@@ -95,6 +95,7 @@ $sesName = $_SESSION['email'];
             </div>
         </div>
 
+        <!-- menampilkan data tutor -->
         <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-people"></i></i> DATA TUTOR </h2><hr>
             <a href="tutor/tambahdatatutor.php" class="btn btn-primary mb-3"><i class="fas fa-plus-square mr-2"></i>TAMBAH DATA TUTOR</a>

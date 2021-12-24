@@ -78,10 +78,6 @@ if ( isset($_POST['register']) ){
                 <h6><b>Email</b></h6>
                 <input type="email" placeholder="email" name="txt_email" required>
             </div>
-              <!-- <div class="input-box-regis">
-                  <h6><b>Username</b></h6>
-                  <input type="text" placeholder="username" name="txt_user">
-              </div> -->
               <div class="input-box-regis">
                   <h6><b>Password</b></h6>
                   <input type="password" placeholder="password" name="txt_pass" required>

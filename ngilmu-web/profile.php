@@ -95,6 +95,7 @@ $sesName = $_SESSION['email'];
             </div>
         </div>
 
+        <!-- menampilkan halaman profile admin -->
         <div class="col-md-4 offset-md-4  mt-5">
 				<div class="card">
 					<div class="card-title text-center">
