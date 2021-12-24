@@ -169,7 +169,7 @@ $sesName = $_SESSION['email'];
     </div>
     </div>
 
-<script>
+<!-- <script>
     //modal delete
     $(document).ready(function(){
         $('.deletebtn').on('click', function(){
@@ -184,7 +184,7 @@ $sesName = $_SESSION['email'];
             $('#id_user').val(data[0]);
         });
     });
-</script>
+</script> -->
 
 <script>
     //menuToogle
