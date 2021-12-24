@@ -4,7 +4,7 @@
     $password = "";
     $db = "db_ngilmu";
     $koneksi = mysqli_connect($server, $username, $password, $db);
-    // urutan pemanggilan variabel sama
+    // urutan pemanggilan variabel
 
     //cek koneksi ke database jika gagal
     if(mysqli_connect_errno()) {
