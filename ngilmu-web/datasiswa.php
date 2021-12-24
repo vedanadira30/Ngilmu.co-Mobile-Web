@@ -158,9 +158,8 @@ $sesName = $_SESSION['email'];
                         <td><?php echo $grade; ?></td>
                         <td><?php echo $gender; ?></td>
                         <td><?php echo $alamat; ?></td>
-                    <td><a href="siswa/editdatasiswa.php?id_user=<?php echo $row['id_user']; ?>" class="btn btn-success">Edit</a></td>
-                    <td><a href="siswa/deletedatasiswa.php?id_user=<?=$row['id_user']; ?>" 
-                        onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Hapus</a></td>
+                        <td><a href="siswa/editdatasiswa.php?id_user=<?php echo $row['id_user']; ?>" class="btn btn-success">Edit</a></td>
+                        <td><a href="siswa/deletedatasiswa.php?id_user=<?=$row['id_user']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Hapus</a></td>
                     </tr>
                 <?php
                  } ?>
