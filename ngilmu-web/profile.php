@@ -97,21 +97,21 @@ $sesName = $_SESSION['email'];
 
         <!-- menampilkan halaman profile admin -->
         <div class="col-md-4 offset-md-4  mt-5">
-				<div class="card">
-					<div class="card-title text-center">
-						<h1>Halaman Profile</h1>
-					</div>
-					<div class="card-body">   
-						<p>Email : <?php echo $_SESSION['email'] ?></p>
-                        <p>Password : <?php echo $_SESSION['password'] ?></p>
-						<!-- <p>Kamu berhasil ke halaman admin.</p> -->
-                        <div class="btn">
-                        <p><a href="editprofile.php?id_admin=<?php echo $_SESSION['id_admin']; ?>" class="btn btn-primary">Edit Profile</a> &nbsp;&nbsp;			
-						<a href="logout.php" onclick="return confirm('Anda yakin akan logout ?')" class="btn btn-danger">Logout</a></p>	
-                        </div>			
-					</div>
-                </div>  
-            </div>
+			<div class="card">
+			<div class="card-title text-center">
+				<h1>Halaman Profile</h1>
+			</div>
+			<div class="card-body">   
+			<p>Email : <?php echo $_SESSION['email'] ?></p>
+            <p>Password : <?php echo $_SESSION['password'] ?></p>
+			<!-- <p>Kamu berhasil ke halaman admin.</p> -->
+            <div class="btn">
+            <p><a href="editprofile.php?id_admin=<?php echo $_SESSION['id_admin']; ?>" class="btn btn-primary">Edit Profile</a> &nbsp;&nbsp;			
+			<a href="logout.php" onclick="return confirm('Anda yakin akan logout ?')" class="btn btn-danger">Logout</a></p>	
+            </div>			
+			</div>
+            </div>  
+        </div>
 
     </div>
 
