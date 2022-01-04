@@ -20,20 +20,29 @@ if(isset($_POST['submit'])){
         }
 
         if($num != 0) {
-            if($userVal==$email && $passVal==$pass){
-                // header('Location: dashboard.php?email=' . urlencode($userVal));
-                $_SESSION['id_admin'] = $id;
-                $_SESSION['email'] = $userVal;
-                $_SESSION['password'] = $passVal;
-                $_SESSION['nama_lengkap'] = $uName;
-                header('Location: dashboard.php');
-            }else{
-                $error = 'user atau password salah!';
-                header('Location: index.php');
+          if($userVal==$email){
+          if($passVal==$pass){
+              $_SESSION['id_admin'] = $id;
+              $_SESSION['email'] = $userVal;
+              $_SESSION['password'] = $passVal;
+              $_SESSION['nama_lengkap'] = $uName;
+              header('Location: dashboard.php');
+            } else {
+              $pesan = "Password yang anda masukan salah";
             }
+          } 
+        } else if($num == 0) {
+          $pesan = "Email yang anda masukan salah";
         }
+      
+        ?>
+        <script>
+          confirm("<?=$pesan?>");
+        </script>
+        <?php
     }
-}
+  }
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +51,7 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/ngilmu2.png">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Login</title>
