@@ -19,6 +19,29 @@ if (isset($_POST['tambah'])) {
    $gender = $_POST['gender'];
    $alamat = $_POST['alamat'];
 
+//    $profile = $_FILES['profile']['name'];
+//    $ukuranFile = $_FILES['profile']['size'];
+//    $error = $_FILES['profile']['error'];
+//    $tmp = $_FILES['profile']['tmp_name'];
+   
+//     //cek tidak ada gambar
+//     if($error === 4){
+//         echo "<script>alert('Pilih gambar terlebih dahulu');window.location='tambahdatasiswa.php'</script>";
+//     }
+
+//     // cek ekstensi gambar
+//     $ekstensi = ['jpg','jpeg','png'];
+//     $ekstensiGambar = explode('.', $profile);
+//     $ekstensiGambar = strtolower(end($ekstensiGambar));
+//     if(!in_array($ekstensiGambar, $ekstensi)){
+//         echo "<script>alert('Maaf, Tipe gambar yang diupload harus jpg / jpeg / png');window.location='tambahdatasiswa.php'</script>";
+//     }
+
+//     // cek ukuran gambar
+//     if($ukuranFile > 1000000){
+//         echo "<script>alert('Ukuran gambar terlalu besar');window.location='tambahdatasiswa.php'</script>";
+//     }
+
    //berhasil upload
    $profile = $_FILES['profile']['name'];
    $tmp = $_FILES['profile']['tmp_name'];

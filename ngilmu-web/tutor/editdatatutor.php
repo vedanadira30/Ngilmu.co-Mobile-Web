@@ -22,11 +22,27 @@ if (isset($_POST['update'])) {
     $gender = $_POST['gender'];
     $alamat = $_POST['alamat'];
     $tgllahir = $_POST['tgl_lahir'];
-    $profile = $_POST['profile'];
-   $query = "UPDATE user_tutor SET password='$password', fullname_tutor='$fullname',
-            instansi='$instansi',no_telp='$notelp', gender='$gender', alamat='$alamat', tgl_lahir='$tgllahir', profile='$profile' where email='$email'";
+    $profilelama = $_POST['profile_lama'];
+
+   //proses upload file
+   $pict = $_FILES['profile']['name'];
+   $tmp = $_FILES['profile']['tmp_name'];
+
+   if ($pict == '') {
+    $query = "UPDATE user_tutor SET password='$password', fullname_tutor='$fullname',
+            instansi='$instansi',no_telp='$notelp', gender='$gender', alamat='$alamat', tgl_lahir='$tgllahir' where email='$email'";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datatutor.php');
+} else {
+    unlink('../images/'.$profilelama);
+
+    move_uploaded_file($tmp, "../images/".$pict);
+
+    $query = "UPDATE user_tutor SET password='$password', fullname_tutor='$fullname',
+            instansi='$instansi',no_telp='$notelp', gender='$gender', alamat='$alamat', tgl_lahir='$tgllahir', profile='$pict' where email='$email'";
+   $result = mysqli_query($koneksi, $query);
+   header('Location: ../datatutor.php');
+    }
 }
 
     $id = $_GET['id_tutor'];
@@ -135,7 +151,7 @@ if (isset($_POST['update'])) {
         <div class="col-md-12 p-5 pt-2">
             <h2><i class="bi bi-people"></i></i> EDIT DATA TUTOR </h2><hr>
             <div class="col-12">
-                <form id="form_validation" method="POST">
+                <form id="form_validation" method="POST" enctype="multipart/form-data">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <label class="form-label">Email</label>
