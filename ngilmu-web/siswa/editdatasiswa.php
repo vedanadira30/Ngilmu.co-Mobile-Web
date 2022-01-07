@@ -172,7 +172,7 @@ if (isset($_POST['update'])) {
                                         <img src="<?php echo $path.$profile;?>" style="width: 80px; height:80px;">
                                     </div><br>
                                     <input type="file" class="form-control" name="profile">
-                                    <input type="hidden" class="form-control" name="profile_lama" value="<?php echo $profile;?>">
+                                    <input type="hidden" class="form-control" name="profile" value="<?php echo $profile;?>">
                                 </div>
                             </div>
                             <button class="btn btn-primary" type="submit" name="update">Simpan Perubahan</button>
