@@ -93,7 +93,7 @@ $uName = $_SESSION['nama_lengkap'];
             </div>
             <!-- userImg -->
             <div class="user">
-                <img src="images/img1.jpg">
+                <img src="images/tutor_male2.png">
             </div>
         </div>
 

@@ -21,7 +21,13 @@ if (isset($_POST['tambah'])) {
     $gender = $_POST['gender'];
     $alamat = $_POST['alamat'];
     $tgllahir = $_POST['tgl_lahir'];
-   $query = "INSERT INTO user_tutor VALUES ('','$email','$password','$fullname','$instansi','$alamat','$gender','$notelp','$tgllahir')";
+
+    //berhasil upload
+   $profile = $_FILES['profile']['name'];
+   $tmp = $_FILES['profile']['tmp_name'];
+
+   move_uploaded_file($tmp, '../images/' . $profile);
+   $query = "INSERT INTO user_tutor VALUES ('','$email','$password','$fullname','$instansi','$alamat','$gender','$notelp','$tgllahir','$profile')";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datatutor.php');
 }
@@ -107,7 +113,7 @@ if (isset($_POST['tambah'])) {
             </div>
             <!-- userImg -->
             <div class="user">
-                <img src="../images/img1.jpg">
+                <img src="../images/tutor_male2.png">
             </div>
         </div>
 
@@ -156,6 +162,10 @@ if (isset($_POST['tambah'])) {
                                     <label for="exampleFormControlInput1">Tanggal Lahir</label>
                                     <input type="date" class="form-control" name="tgl_lahir" required
                                         placeholder="tangal lahir">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Profile</label>
+                                    <input type="file" class="form-control" name="profile">
+                                </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>
                                     <a href="../datatutor.php">

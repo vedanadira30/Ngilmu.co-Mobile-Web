@@ -102,7 +102,7 @@ if (isset($_POST['tambah'])) {
             </div>
             <!-- userImg -->
             <div class="user">
-                <img src="../images/img1.jpg">
+                <img src="../images/tutor_male2.png">
             </div>
         </div>
 

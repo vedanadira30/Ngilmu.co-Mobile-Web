@@ -94,31 +94,9 @@ $uName = $_SESSION['nama_lengkap'];
             </div>
             <!-- userImg -->
             <div class="user">
-                <img src="images/img1.jpg">
+                <img src="images/tutor_male2.png">
             </div>
         </div>
-
-        <!-- Delete Modal -->
-        <!-- <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Data Siswa</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="siswa/deletedatasiswa.php" method="POST">
-            <div class="modal-body">
-                <input type="hidden" name="id_user" id="id_user">
-                <p>Apakah anda yakin?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                <button type="submit" name="deletedata" class="btn btn-primary">Delete</button>
-            </div>
-            </form>
-            </div>
-        </div>
-        </div> -->
 
         <!-- table data siswa -->
         <div class="col-md-12 p-5 pt-2">
@@ -134,6 +112,7 @@ $uName = $_SESSION['nama_lengkap'];
                   <th scope="col">KELAS</th>
                   <th scope="col">JENIS KELAMIN</th>
                   <th scope="col">ALAMAT</th>
+                  <th scope="col">PROFILE</th>
                   <th colspan="2" scope="col">AKSI</th>
                 </tr>
               </thead>
@@ -151,6 +130,7 @@ $uName = $_SESSION['nama_lengkap'];
                         $grade = $row['grade'];
                         $gender = $row['gender'];
                         $alamat = $row['alamat'];
+                        $profile = $row['profile'];
                     ?>
                     <tr>
                         <td><?=$no++?></td>
@@ -160,6 +140,7 @@ $uName = $_SESSION['nama_lengkap'];
                         <td><?php echo $grade; ?></td>
                         <td><?php echo $gender; ?></td>
                         <td><?php echo $alamat; ?></td>
+                        <td><img src="images/<?php echo $profile;?>" style="width: 80px; height:80px;"></td>
                         <td><a href="siswa/editdatasiswa.php?id_user=<?php echo $row['id_user']; ?>" class="btn btn-success">Edit</a></td>
                         <td><a href="siswa/deletedatasiswa.php?id_user=<?=$row['id_user']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Hapus</a></td>
                     </tr>
@@ -170,23 +151,6 @@ $uName = $_SESSION['nama_lengkap'];
 
     </div>
     </div>
-
-<!-- <script>
-    //modal delete
-    $(document).ready(function(){
-        $('.deletebtn').on('click', function(){
-            $('#deletemodal').modal('show');
-            $tr = $(this).closest('tr');
-            var data = $tr.children("td").map(function(){
-                return $(this).text();
-            }).get();
-
-            console.log(data);
-
-            $('#id_user').val(data[0]);
-        });
-    });
-</script> -->
 
 <script>
     //menuToogle

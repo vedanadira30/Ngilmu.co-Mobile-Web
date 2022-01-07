@@ -93,7 +93,7 @@ $uName = $_SESSION['nama_lengkap'];
             </div>
             <!-- userImg -->
             <div class="user">
-                <img src="images/img1.jpg">
+                <img src="images/tutor_male2.png">
             </div>
         </div>
 
@@ -113,6 +113,7 @@ $uName = $_SESSION['nama_lengkap'];
                   <th scope="col">GENDER</th>
                   <th scope="col">ALAMAT</th>
                   <th scope="col">TGL LAHIR</th>
+                  <th scope="col">PROFILE</th>
                   <th colspan="2" scope="col">AKSI</th>
                 </tr>
               </thead>
@@ -132,6 +133,7 @@ $uName = $_SESSION['nama_lengkap'];
                         $gender = $row['gender'];
                         $alamat = $row['alamat'];
                         $tgllahir = $row['tgl_lahir'];
+                        $profile = $row['profile'];
                     ?>
                     <tr>
                         <td><?=$no++?></td>
@@ -143,6 +145,7 @@ $uName = $_SESSION['nama_lengkap'];
                         <td><?php echo $gender; ?></td>
                         <td><?php echo $alamat; ?></td>
                         <td><?php echo $tgllahir; ?></td>
+                        <td><img src="images/<?php echo $profile;?>" style="width: 80px; height:80px;"></td>
                         <td><a href="tutor/editdatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" class="btn btn-success">Edit</a></td>
                         <td><a href="tutor/deletedatatutor.php?id_tutor=<?php echo $row['id_tutor']; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" class="btn btn-danger">Delete</a></td>
                     </tr>

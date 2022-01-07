@@ -10,6 +10,7 @@ if(!isset($_SESSION['id_admin'])) {
 $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];  
 $uName = $_SESSION['nama_lengkap'];
+$path = '../images/';
 
 if (isset($_POST['update'])) {
 //    $id = $_POST['id_user'];
@@ -19,8 +20,9 @@ if (isset($_POST['update'])) {
    $grade = $_POST['grade'];
    $gender = $_POST['gender'];
    $alamat = $_POST['alamat'];
+   $profile = $_POST['profile'];
    $query = "UPDATE user_detail SET password='$password', fullname='$fullname',
-            grade='$grade', gender='$gender', alamat='$alamat' where email='$email'";
+            grade='$grade', gender='$gender', alamat='$alamat', profile='$profile' where email='$email'";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datasiswa.php');
 }
@@ -37,6 +39,7 @@ if (isset($_POST['update'])) {
         $grade = $row['grade'];
         $gender = $row['gender'];
         $alamat = $row['alamat'];
+        $profile = $row['profile'];
     }
 ?>
 <!DOCTYPE html>
@@ -120,7 +123,7 @@ if (isset($_POST['update'])) {
             </div>
             <!-- userImg -->
             <div class="user">
-                <img src="../images/img1.jpg">
+                <img src="../images/tutor_male2.png">
             </div>
         </div>
 
@@ -161,6 +164,16 @@ if (isset($_POST['update'])) {
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Alamat</label>
                                 <textarea class="form-control" name="alamat" rows="3"><?= $alamat; ?></textarea>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <label class="form-label">Profile</label>
+                                    <div>
+                                        <img src="<?php echo $path.$profile;?>" style="width: 80px; height:80px;">
+                                    </div><br>
+                                    <input type="file" class="form-control" name="profile">
+                                    <input type="hidden" class="form-control" name="profile_lama" value="<?php echo $profile;?>">
+                                </div>
                             </div>
                             <button class="btn btn-primary" type="submit" name="update">Simpan Perubahan</button>
                             <a href="../datasiswa.php">

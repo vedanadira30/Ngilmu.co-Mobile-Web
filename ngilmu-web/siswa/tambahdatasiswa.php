@@ -18,7 +18,13 @@ if (isset($_POST['tambah'])) {
    $grade = $_POST['grade'];
    $gender = $_POST['gender'];
    $alamat = $_POST['alamat'];
-   $query = "INSERT INTO user_detail VALUES ('','$email','$password','$fullname','$grade','$gender','$alamat')";
+
+   //berhasil upload
+   $profile = $_FILES['profile']['name'];
+   $tmp = $_FILES['profile']['tmp_name'];
+
+   move_uploaded_file($tmp, '../images/' . $profile);
+   $query = "INSERT INTO user_detail VALUES ('','$email','$password','$fullname','$grade','$gender','$alamat','$profile')";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datasiswa.php');
 }
@@ -104,7 +110,7 @@ if (isset($_POST['tambah'])) {
             </div>
             <!-- userImg -->
             <div class="user">
-                <img src="../images/img1.jpg">
+                <img src="../images/tutor_male2.png">
             </div>
         </div>
 
@@ -142,6 +148,10 @@ if (isset($_POST['tambah'])) {
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Alamat</label>
                                     <textarea class="form-control" name="alamat" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Profile</label>
+                                    <input type="file" class="form-control" name="profile">
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit" name="tambah">Simpan</button>

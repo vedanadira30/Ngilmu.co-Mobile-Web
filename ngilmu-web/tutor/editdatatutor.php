@@ -10,6 +10,7 @@ if(!isset($_SESSION['id_admin'])) {
 $sesID = $_SESSION['id_admin'];
 $sesName = $_SESSION['email'];
 $uName = $_SESSION['nama_lengkap'];
+$path = '../images/';
 
 if (isset($_POST['update'])) {
 //    $id = $_POST['id_tutor'];
@@ -21,8 +22,9 @@ if (isset($_POST['update'])) {
     $gender = $_POST['gender'];
     $alamat = $_POST['alamat'];
     $tgllahir = $_POST['tgl_lahir'];
+    $profile = $_POST['profile'];
    $query = "UPDATE user_tutor SET password='$password', fullname_tutor='$fullname',
-            instansi='$instansi',no_telp='$notelp', gender='$gender', alamat='$alamat', tgl_lahir='$tgllahir' where email='$email'";
+            instansi='$instansi',no_telp='$notelp', gender='$gender', alamat='$alamat', tgl_lahir='$tgllahir', profile='$profile' where email='$email'";
    $result = mysqli_query($koneksi, $query);
    header('Location: ../datatutor.php');
 }
@@ -41,6 +43,7 @@ if (isset($_POST['update'])) {
         $gender = $row['gender'];
         $alamat = $row['alamat'];
         $tgllahir = $row['tgl_lahir'];
+        $profile = $row['profile'];
     }
 ?>
 <!DOCTYPE html>
@@ -124,7 +127,7 @@ if (isset($_POST['update'])) {
             </div>
             <!-- userImg -->
             <div class="user">
-                <img src="../images/img1.jpg">
+                <img src="../images/tutor_male2.png">
             </div>
         </div>
 
@@ -177,6 +180,16 @@ if (isset($_POST['update'])) {
                                 <div class="form-line">
                                     <label class="form-label">Tanggal Lahir</label>
                                     <input type="date" class="form-control" name="tgl_lahir" value="<?php echo $tgllahir;?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <label class="form-label">Profile</label>
+                                    <div>
+                                        <img src="<?php echo $path.$profile;?>" style="width: 80px; height:80px;">
+                                    </div><br>
+                                    <input type="file" class="form-control" name="profile">
+                                    <input type="hidden" class="form-control" name="profile_lama" value="<?php echo $profile;?>">
                                 </div>
                             </div>
                             <button class="btn btn-primary" type="submit" name="update">Simpan Perubahan</button>
