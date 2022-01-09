@@ -1,8 +1,8 @@
 <?php
     $server = "localhost";
-    $username = "root";
-    $password = "";
-    $db = "db_ngilmu";
+    $username = "u1694897_b_reg_2";
+    $password = "jtipolije";
+    $db = "u1694897_b_reg_2_db";
     $koneksi = mysqli_connect($server, $username, $password, $db);
     // urutan pemanggilan variabel
 

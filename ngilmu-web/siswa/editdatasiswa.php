@@ -13,7 +13,7 @@ $uName = $_SESSION['nama_lengkap'];
 $path = '../images/';
 
 if (isset($_POST['update'])) {
-//    $id = $_POST['id_user'];
+   $id = $_POST['id_user'];
    $email = $_POST['email'];
    $password = $_POST['password'];
    $fullname = $_POST['fullname'];
